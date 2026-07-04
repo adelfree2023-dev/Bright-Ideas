@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "homepage": "https://adelfree2023-dev.github.io/Bright-Ideas",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node node_modules/next/dist/bin/next dev",
+    "build": "node node_modules/next/dist/bin/next build",
+    "start": "node node_modules/next/dist/bin/next start",
     "lint": "eslint",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out"
