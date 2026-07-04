@@ -36,9 +36,9 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
           <Image
             src="/Bright-Ideas/assets/logo_transparent.png"
             alt="Private Ideas Logo"
-            width={120}
-            height={50}
-            className="h-10 w-auto object-contain"
+            width={180}
+            height={75}
+            className="h-14 md:h-16 w-auto object-contain"
             priority
           />
         </a>

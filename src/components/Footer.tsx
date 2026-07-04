@@ -20,9 +20,9 @@ export default function Footer({ isEn, t }: FooterProps) {
             <Image
               src="/Bright-Ideas/assets/logo_transparent.png"
               alt="Bright Ideas Logo"
-              width={130}
-              height={55}
-              className="h-10 w-auto object-contain"
+              width={200}
+              height={85}
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </a>
           <p className="text-text-light/60 text-sm leading-relaxed font-light max-w-sm">
