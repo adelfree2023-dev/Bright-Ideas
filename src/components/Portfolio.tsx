@@ -17,141 +17,139 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
   // Map optimized images to realistic project details
   const projects = [
     { 
+      src: "/assets/gallery_img_1.webp", 
+      category: "services", 
+      tag: "services", 
+      titleAr: "تنظيف سجاد بالبخار (في نفس اليوم)", 
+      titleEn: "Same-Day Steam Carpet Cleaning",
+      descAr: "تنظيف وتعقيم عميق للسجاد بأحدث أجهزة البخار الحار لإزالة الأوساخ والبكتيريا بدون روائح.",
+      descEn: "Deep steam carpet cleaning and sanitization using hot steam technology to remove dirt and bacteria."
+    },
+    { 
       src: "/assets/gallery_img_2.webp", 
-      category: "contracting", 
-      tag: "contracting", 
-      titleAr: "إنشاء فيلا سكنية فاخرة", 
-      titleEn: "Luxury Residential Villa Construction",
-      descAr: "تنفيذ أعمال الإنشاءات والمقاولات المتكاملة للفيلات السكنية الفاخرة بأحدث المعايير الهندسية والإنشائية.",
-      descEn: "Complete construction of high-end residential villas in accordance with modern engineering standards."
+      category: "services", 
+      tag: "services", 
+      titleAr: "تنظيف السجاد والمجالس والكنب", 
+      titleEn: "Carpet, Sofa & Majlis Steam Cleaning",
+      descAr: "نهتم بأدق التفاصيل لإزالة البقع المستعصية والروائح الكريهة من السجاد والكنب بأمان كامل على الأقمشة.",
+      descEn: "Meticulous deep cleaning of carpets, sofas, and Majlis to eradicate stains and odors safely."
     },
-    { 
-      src: "/assets/gallery_img_5.webp", 
-      category: "contracting", 
-      tag: "contracting", 
-      titleAr: "هيكل معدني لمستودع تجاري", 
-      titleEn: "Commercial Hangar Steel Structure",
-      descAr: "تصميم وتركيب الهياكل المعدنية والحديدية للمستودعات والمخازن التجارية بدقة وأمان تام.",
-      descEn: "Design and fabrication of durable steel structures and hangars for commercial use."
-    },
-    { 
-      src: "/assets/gallery_img_10.webp", 
-      category: "contracting", 
-      tag: "contracting", 
-      titleAr: "تشييد مبنى تجاري متعدد الاستخدامات", 
-      titleEn: "Multi-use Commercial Building Construction",
-      descAr: "أعمال مقاولات الهياكل الخرسانية والمجمعات التجارية الكبرى من الحفر والتأسيس وحتى التسليم.",
-      descEn: "Full-scale construction of mixed-use buildings and commercial complexes from foundations to turnkey."
-    },
-    { 
-      src: "/assets/gallery_img_12.webp", 
-      category: "contracting", 
-      tag: "contracting", 
-      titleAr: "أعمال صيانة هيكلية للمباني", 
-      titleEn: "Structural Building Restoration",
-      descAr: "خدمات صيانة وترميم الهياكل وتدعيم المباني القديمة والمنشآت لضمان متانتها وسلامتها.",
-      descEn: "Structural repair, restoration, and concrete reinforcement of buildings for lifetime safety."
-    },
-    { 
-      src: "/assets/gallery_img_15.webp", 
-      category: "contracting", 
-      tag: "contracting", 
-      titleAr: "بناء ملحق فيلا سكني", 
-      titleEn: "Residential Villa Annex Construction",
-      descAr: "بناء الملاحق السكنية والمجالس الخارجية والغرف الإضافية مع مراعاة التناسق المعماري مع المبنى الرئيسي.",
-      descEn: "Building custom residential annexes, outdoor Majlis, and extensions with elegant architectural harmony."
-    },
-    
     { 
       src: "/assets/gallery_img_3.webp", 
-      category: "finishing", 
-      tag: "finishing", 
-      titleAr: "تركيب سيراميك وبورسلان فيلا", 
-      titleEn: "Ceramic & Porcelain Installation in Villa",
-      descAr: "تركيب أرضيات وجدران السيراميك والبورسلان للفلل والمكاتب بدقة متناهية وتشطيب راقٍ ومستوٍ.",
-      descEn: "Precision laying of ceramic and porcelain tiles for floors and walls with a flawless finish."
+      category: "services", 
+      tag: "services", 
+      titleAr: "غسيل وتنظيف المطابخ الشامل", 
+      titleEn: "Comprehensive Kitchen Deep Cleaning",
+      descAr: "إزالة الدهون المتراكمة، تنظيف الشفاطات والأفران من الداخل والخارج، وتعقيم الجدران والأسطح بدون فوضى.",
+      descEn: "Removing accumulated grease, cleaning exhaust hoods and ovens, and sanitizing kitchen walls and surfaces."
     },
     { 
       src: "/assets/gallery_img_4.webp", 
-      category: "finishing", 
-      tag: "finishing", 
-      titleAr: "دهانات وديكورات داخلية حديثة", 
-      titleEn: "Modern Interior Paint & Decorations",
-      descAr: "تنفيذ أعمال الدهانات الداخلية والخارجية والورق الجدران بألوان عصرية وخامات ممتازة تدوم طويلاً.",
-      descEn: "Premium interior and exterior painting services with modern decorative finishes."
+      category: "services", 
+      tag: "services", 
+      titleAr: "تنظيف وتعقيم دواليب وأسطح المطبخ", 
+      titleEn: "Kitchen Cabinets & Countertops Sanitization",
+      descAr: "فريق عمل متخصص لتنظيف المطابخ، وتعقيم الدواليب والأدراج والأحواض لضمان مطبخ صحي وآمن لعائلتك.",
+      descEn: "Specialized team for deep kitchen cleaning, sanitizing cabinets, drawers, and sinks for a healthy kitchen."
+    },
+    { 
+      src: "/assets/gallery_img_5.webp", 
+      category: "services", 
+      tag: "services", 
+      titleAr: "تنظيف وتعقيم السجاد والمجالس بالبخار", 
+      titleEn: "Steam Cleaning for Carpet & Majlis",
+      descAr: "توفير أعلى مستويات النظافة والتعقيم للمجالس والسجاد بمواد آمنة تماماً على الأقمشة وصحة الأطفال.",
+      descEn: "Providing top-tier cleaning and disinfection for Majlis and carpets with fabric-safe products."
+    },
+    { 
+      src: "/assets/gallery_img_6.webp", 
+      category: "contracting", 
+      tag: "contracting", 
+      titleAr: "أعمال المقاولات العامة والإنشاءات", 
+      titleEn: "General Contracting & Construction Works",
+      descAr: "نقدم حلول المقاولات العامة والإنشاءات المتكاملة من التأسيس إلى تسليم المفتاح بكفاءة وجودة عالية.",
+      descEn: "Providing comprehensive general contracting and construction solutions from foundations to turnkey."
     },
     { 
       src: "/assets/gallery_img_7.webp", 
       category: "finishing", 
       tag: "finishing", 
-      titleAr: "تلميع وجلي أرضيات رخام طبيعي", 
-      titleEn: "Natural Marble Grinding & Polishing",
-      descAr: "جلي وتلميع الرخام والجرانيت الطبيعي ومعالجة الفواصل والكسور لإعادة اللمعان الأصلي للأرضيات.",
-      descEn: "Professional marble grinding and polishing to restore a mirror-like shine to your stone floor."
-    },
-    { 
-      src: "/assets/gallery_img_13.webp", 
-      category: "finishing", 
-      tag: "finishing", 
-      titleAr: "تنفيذ جبس بورد أسقف معلقة", 
-      titleEn: "Gypsum Board Suspended Ceilings",
-      descAr: "تركيب أسقف الجبس بورد والديكورات الجدارية والأسقف المستعارة مع توزيع مخفي للإضاءة الحديثة.",
-      descEn: "Expert gypsum board installation and suspended ceiling designs with integrated ambient lighting."
-    },
-    { 
-      src: "/assets/gallery_img_14.webp", 
-      category: "finishing", 
-      tag: "finishing", 
-      titleAr: "تركيب أرضيات جرانيت فاخرة", 
-      titleEn: "Luxury Granite Floor Installation",
-      descAr: "توريد وتركيب بلاط الجرانيت الصلب للمداخل والممرات والساحات الخارجية بأشكال هندسية رائعة.",
-      descEn: "Supply and professional installation of durable granite tiles for heavy-traffic pathways and entrances."
-    },
-    
-    { 
-      src: "/assets/gallery_img_1.webp", 
-      category: "services", 
-      tag: "services", 
-      titleAr: "تنظيف وتعقيم ما بعد تشطيب الفلل", 
-      titleEn: "Post-Construction Villa Deep Cleaning",
-      descAr: "تنظيف شامل وعميق للمباني والفلل بعد انتهاء التشطيبات لإزالة الغبار، الطلاء، وبقايا الأسمنت.",
-      descEn: "Post-construction cleaning services to remove dust, paint splatters, and builder debris from new spaces."
-    },
-    { 
-      src: "/assets/gallery_img_6.webp", 
-      category: "services", 
-      tag: "services", 
-      titleAr: "تنظيف سجاد ومجالس بالبخار", 
-      titleEn: "Steam Cleaning for Majlis & Carpets",
-      descAr: "غسيل وتنظيف السجاد والمجالس والكنب والستائر بالبخار الحار لإزالة البقع الصعبة والتعقيم الكامل.",
-      descEn: "Deep steam cleaning for carpets, sofas, and Majlis to eradicate deep stains, odors, and bacteria."
+      titleAr: "جلي وتلميع جميع أنواع الأرضيات", 
+      titleEn: "Floor Grinding & Polishing Services",
+      descAr: "تلميع الرخام، السيراميك، والجرانيت، وإزالة الخدوش والبقع لحماية الأرضيات وإعادة لمعانها البراق.",
+      descEn: "Polishing marble, ceramic, and granite floors, removing scratches and stains for lasting shine."
     },
     { 
       src: "/assets/gallery_img_8.webp", 
-      category: "services", 
-      tag: "services", 
-      titleAr: "مكافحة حشرات وقائية للمنازل", 
-      titleEn: "Residential Preventative Pest Control",
-      descAr: "إبادة ومكافحة النمل الأبيض والصراصير والقوارض بأفضل أنواع المبيدات الآمنة والمصرحة صحياً.",
-      descEn: "Comprehensive pest control services using eco-friendly, approved products to keep your home pest-free."
+      category: "finishing", 
+      tag: "finishing", 
+      titleAr: "جلي وتلميع الرخام الطبيعي", 
+      titleEn: "Natural Marble Grinding & Polishing",
+      descAr: "إعادة الرونق والفخامة للرخام الطبيعي من خلال إزالة الطبقات الباهتة وتلميعها بأحدث المعدات والمواد الآمنة.",
+      descEn: "Restoring the luxury of natural marble by grinding, stain removal, and polishing with modern equipment."
     },
     { 
       src: "/assets/gallery_img_9.webp", 
+      category: "contracting", 
+      tag: "contracting", 
+      titleAr: "بناء وتشييد الفلل والمباني", 
+      titleEn: "Villa & Building Construction",
+      descAr: "متخصصون في بناء الفلل السكنية والمباني التجارية مع التشطيبات الداخلية والخارجية بأعلى معايير الإتقان.",
+      descEn: "Specialized in constructing residential villas and commercial buildings with high-quality finishes."
+    },
+    { 
+      src: "/assets/gallery_img_10.webp", 
       category: "services", 
       tag: "services", 
-      titleAr: "تطهير وتعقيم دوري للمكاتب", 
-      titleEn: "Corporate Office Regular Sanitization",
-      descAr: "تعقيم وتطهير دوري للمؤسسات والشركات والمكاتب لضمان بيئة عمل صحية وآمنة للموظفين والزوار.",
-      descEn: "Scheduled office sanitization and disinfection services for a clean and healthy workplace."
+      titleAr: "صيانة وإصلاح المكيفات 24/7", 
+      titleEn: "24/7 Air Conditioner Maintenance",
+      descAr: "خدمة صيانة وإصلاح أجهزة التكييف السبلت والمركزي بواسطة فنيين متخصصين لضمان هواء نقي وبارد.",
+      descEn: "Maintenance and repair of split and central AC units by specialized technicians to ensure pure air."
+    },
+    { 
+      src: "/assets/gallery_img_12.webp", 
+      category: "contracting", 
+      tag: "contracting", 
+      titleAr: "خدمات المقاولات العامة المتكاملة", 
+      titleEn: "Integrated General Contracting Services",
+      descAr: "تنفيذ كافة أعمال الإنشاءات، والترميم، والدهانات، والسباكة والكهرباء، وتركيب السيراميك والإنترلوك والعوازل.",
+      descEn: "Executing all construction, restoration, painting, plumbing, electrical, tile laying, and insulation works."
+    },
+    { 
+      src: "/assets/gallery_img_13.webp", 
+      category: "services", 
+      tag: "services", 
+      titleAr: "مكافحة ورش الحشرات والصراصير", 
+      titleEn: "Pest & Insect Eradication Services",
+      descAr: "إبادة تامة للصراصير والنمل والبعوض بمواد آمنة تماماً على أفراد الأسرة والحيوانات الأليفة وبضمان طويل.",
+      descEn: "Complete eradication of cockroaches, ants, and pests using family-safe public health pesticides."
+    },
+    { 
+      src: "/assets/gallery_img_14.webp", 
+      category: "services", 
+      tag: "services", 
+      titleAr: "تنظيف وتعقيم خزانات المياه", 
+      titleEn: "Water Tank Cleaning & Disinfection",
+      descAr: "إزالة الرواسب، الطحالب، والبكتيريا من خزانات المياه بمواد معتمدة لضمان مياه نظيفة وحياة صحية لعائلتك.",
+      descEn: "Removing sediment, algae, and bacteria from water tanks using certified safe disinfectants."
+    },
+    { 
+      src: "/assets/gallery_img_15.webp", 
+      category: "services", 
+      tag: "services", 
+      titleAr: "تنظيف وصيانة المكيفات الدورية", 
+      titleEn: "Periodic AC Cleaning & Maintenance",
+      descAr: "غسيل الوحدات الداخلية والخارجية للمكيفات وتعبئة الفريون لتحسين كفاءة التبريد وتقليل استهلاك الكهرباء.",
+      descEn: "Washing internal and external AC units and refilling gas to improve cooling and efficiency."
     },
     { 
       src: "/assets/gallery_img_16.webp", 
       category: "services", 
       tag: "services", 
-      titleAr: "نقل وتغليف عفش فيلا سكنية", 
-      titleEn: "Residential Villa Furniture Relocation",
-      descAr: "خدمات فك ونقل وتغليف وتركيب الأثاث والمنقولات المنزلية بمركبات مجهزة وأيدي عاملة خبيرة.",
-      descEn: "Professional moving, wrapping, and assembly of furniture with safe and secure transit."
+      titleAr: "نقل وتغليف العفش والأثاث", 
+      titleEn: "Professional Furniture Moving & Packaging",
+      descAr: "نقل آمن وسريع للأثاث مع فك وتركيب بواسطة نجارين محترفين وتغليف احترافي لضمان السلامة من الخدوش.",
+      descEn: "Safe, fast furniture moving with professional disassembly, wrapping, and reassembly by carpenters."
     },
   ];
 
