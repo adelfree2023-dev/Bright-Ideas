@@ -15,8 +15,13 @@ export default function Hero({ isEn, t }: HeroProps) {
       id="hero"
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0B1120] py-24"
     >
-      {/* Premium spotlight background overlay using radial gradient */}
-      <div className="absolute inset-0 z-0 bg-[#0B1120]" />
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20 transition-opacity duration-1000"
+        style={{ backgroundImage: "url('/assets/man.webp')" }}
+      />
+      {/* Radial Gradient overlay to blend it with dark theme */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120]/60 via-[#0B1120]/80 to-[#0B1120] z-0" />
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[150px] -z-10" />
       <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[120px] -z-10" />
 
@@ -41,26 +46,27 @@ export default function Hero({ isEn, t }: HeroProps) {
         >
           {isEn ? (
             <>
-              Building the{" "}
+              Elevating{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-yellow-400 to-yellow-200">
-                Future
+                Cleaning
               </span>
-              , Elevating{" "}
+              ... with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-yellow-400 to-yellow-200">
                 Quality
               </span>{" "}
-              Standards
+              Standards ✨
             </>
           ) : (
             <>
-              نبني{" "}
+              نرتقي{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-yellow-400 to-yellow-200">
-                المستقبل
-              </span>{" "}
-              ونرتقي بمعايير{" "}
+                بالنظافة
+              </span>
+              ... بمعايير{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-yellow-400 to-yellow-200">
                 الجودة
-              </span>
+              </span>{" "}
+              ✨
             </>
           )}
         </motion.h1>
