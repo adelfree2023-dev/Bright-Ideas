@@ -12,9 +12,24 @@ interface HeaderProps {
 
 export default function Header({ isEn, setIsEn, t }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#0B1120]/70 border-b border-white/5 w-full py-4 transition-all duration-300">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "backdrop-blur-xl bg-[#0B1120]/80 border-b border-white/5 py-4 shadow-xl"
+          : "bg-transparent py-6 border-b border-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="flex items-center">
