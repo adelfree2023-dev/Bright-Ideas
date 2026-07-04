@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { Menu, X, PhoneCall } from "lucide-react";
@@ -34,7 +34,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
         {/* Logo */}
         <a href="#" className="flex items-center">
           <Image
-            src="/assets/logo_transparent.png"
+            src="/assets/logo_transparent.webp"
             alt="Private Ideas Logo"
             width={180}
             height={75}

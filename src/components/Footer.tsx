@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -18,7 +18,7 @@ export default function Footer({ isEn, t }: FooterProps) {
         <div className="md:col-span-5 flex flex-col gap-6">
           <a href="#" className="inline-block self-start">
             <Image
-              src="/assets/logo_transparent.png"
+              src="/assets/logo_transparent.webp"
               alt="Bright Ideas Logo"
               width={200}
               height={85}
