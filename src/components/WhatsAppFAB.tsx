@@ -19,7 +19,13 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
       >
         {/* Sonar Ring Wave Effect */}
         <span className="absolute inset-0 rounded-full bg-yellow-500/40 animate-ping -z-10" />
-        <Phone size={24} />
+        <Image
+          src="/assets/call.webp"
+          alt="Call"
+          width={30}
+          height={30}
+          className="w-[55%] h-[55%] object-contain"
+        />
       </a>
 
       {/* Floating WhatsApp Button */}
