@@ -18,6 +18,17 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const serviceLabels: Record<string, { ar: string; en: string }> = {
+    contracting: { ar: "أعمال المقاولات والإنشاءات", en: "Contracting & Construction" },
+    finishing: { ar: "التشطيبات والديكور الداخلي", en: "Finishing & Decor" },
+    mep: { ar: "الأعمال الكهروميكانيكية (MEP)", en: "Electrical & Plumbing (MEP)" },
+    ac: { ar: "صيانة التكييف", en: "AC Maintenance" },
+    cleaning: { ar: "خدمات النظافة", en: "Cleaning Services" },
+    floor: { ar: "جلي وتلميع الأرضيات", en: "Floor Polishing" },
+    pest: { ar: "مكافحة الحشرات", en: "Pest Control" },
+    moving: { ar: "نقل الأثاث والعفش", en: "Furniture Moving" },
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.message) {
@@ -26,21 +37,36 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
     }
 
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      alert(
-        isEn
-          ? "Thank you! Your request has been received successfully."
-          : "شكراً لك! تم استلام طلبك بنجاح وسنتواصل معك قريباً."
-      );
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        phone: "",
-        service: "contracting",
-        message: "",
-      });
-    }, 1500);
+
+    const serviceName = serviceLabels[formData.service]?.[isEn ? "en" : "ar"] || formData.service;
+    
+    // Construct the WhatsApp message
+    const waMessage = isEn 
+      ? `*New Service Request from Website:*
+• *Name:* ${formData.name}
+• *Phone:* ${formData.phone}
+• *Service:* ${serviceName}
+• *Details:* 
+${formData.message}`
+      : `*طلب خدمة جديد من الموقع الإلكتروني:*
+• *الاسم الكريّم:* ${formData.name}
+• *رقم الجوال:* ${formData.phone}
+• *الخدمة المطلوبة:* ${serviceName}
+• *تفاصيل الاستفسار:*
+${formData.message}`;
+
+    const waUrl = `https://wa.me/97455056698?text=${encodeURIComponent(waMessage)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(waUrl, "_blank");
+
+    setIsSubmitting(false);
+    setFormData({
+      name: "",
+      phone: "",
+      service: "contracting",
+      message: "",
+    });
   };
 
   const handleChange = (
