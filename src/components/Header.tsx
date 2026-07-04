@@ -11,35 +11,16 @@ interface HeaderProps {
 }
 
 export default function Header({ isEn, setIsEn, t }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-primary/90 backdrop-blur-md shadow-lg border-b border-champagne/20 py-3"
-          : "bg-transparent py-5 border-b border-white/10"
-      }`}
-    >
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#0B1120]/70 border-b border-white/5 w-full py-4 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="flex items-center">
           <Image
             src="/assets/logo_transparent.png"
-            alt="Bright Ideas Logo"
+            alt="Private Ideas Logo"
             width={120}
             height={50}
             className="h-10 w-auto object-contain"
@@ -49,29 +30,29 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8">
-          <ul className="flex gap-6 text-text-light font-medium">
+          <ul className="flex gap-6 text-gray-300 font-medium text-sm lg:text-base">
             <li>
-              <a href="#hero" className="hover:text-gold transition-colors">
+              <a href="#hero" className="hover:text-white transition-colors">
                 {t.nav.home}
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:text-gold transition-colors">
+              <a href="#services" className="hover:text-white transition-colors">
                 {t.nav.services}
               </a>
             </li>
             <li>
-              <a href="#why-us" className="hover:text-gold transition-colors">
+              <a href="#why-us" className="hover:text-white transition-colors">
                 {t.nav.whyUs}
               </a>
             </li>
             <li>
-              <a href="#gallery" className="hover:text-gold transition-colors">
+              <a href="#gallery" className="hover:text-white transition-colors">
                 {t.nav.portfolio}
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-gold transition-colors">
+              <a href="#contact" className="hover:text-white transition-colors">
                 {t.nav.contact}
               </a>
             </li>
@@ -83,7 +64,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
           {/* Language Switcher */}
           <button
             onClick={() => setIsEn(!isEn)}
-            className="text-text-light hover:text-gold border border-champagne/30 hover:border-gold px-3 py-1 rounded transition-colors text-sm font-semibold cursor-pointer"
+            className="text-gray-300 hover:text-white border border-white/10 hover:border-white/30 px-3 py-1 rounded transition-colors text-sm font-semibold cursor-pointer"
           >
             {isEn ? "العربية" : "English"}
           </button>
@@ -92,7 +73,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
             href="https://wa.me/97455056698"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold hover:bg-gold-hover text-primary-dark font-semibold px-5 py-2.5 rounded-full flex items-center gap-2 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer text-sm"
+            className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 shadow-md hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all transform hover:-translate-y-0.5 cursor-pointer text-sm"
           >
             <PhoneCall size={16} />
             <span>{t.nav.getQuote}</span>
@@ -103,29 +84,29 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
         <div className="flex items-center gap-3 md:hidden">
           <button
             onClick={() => setIsEn(!isEn)}
-            className="text-text-light hover:text-gold border border-champagne/30 px-2.5 py-0.5 rounded text-xs cursor-pointer"
+            className="text-gray-300 hover:text-white border border-white/10 px-2.5 py-0.5 rounded text-xs cursor-pointer"
           >
             {isEn ? "العربية" : "EN"}
           </button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-text-light hover:text-gold cursor-pointer"
+            className="text-gray-300 hover:text-white cursor-pointer"
             aria-label="Toggle Menu"
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-primary-dark/95 border-b border-champagne/20 backdrop-blur-lg absolute top-full left-0 w-full py-6 px-8 flex flex-col gap-6 shadow-2xl animate-fade-in">
-          <ul className="flex flex-col gap-4 text-text-light text-lg font-medium">
+        <div className="md:hidden bg-[#0B1120]/95 border-b border-white/5 backdrop-blur-xl absolute top-full left-0 w-full py-6 px-8 flex flex-col gap-6 shadow-2xl">
+          <ul className="flex flex-col gap-4 text-gray-300 text-lg font-medium">
             <li>
               <a
                 href="#hero"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-gold block"
+                className="hover:text-white block"
               >
                 {t.nav.home}
               </a>
@@ -134,7 +115,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#services"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-gold block"
+                className="hover:text-white block"
               >
                 {t.nav.services}
               </a>
@@ -143,7 +124,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#why-us"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-gold block"
+                className="hover:text-white block"
               >
                 {t.nav.whyUs}
               </a>
@@ -152,7 +133,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#gallery"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-gold block"
+                className="hover:text-white block"
               >
                 {t.nav.portfolio}
               </a>
@@ -161,7 +142,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-gold block"
+                className="hover:text-white block"
               >
                 {t.nav.contact}
               </a>
@@ -172,7 +153,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
             href="https://wa.me/97455056698"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold hover:bg-gold-hover text-primary-dark text-center font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition-all cursor-pointer"
+            className="bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]"
             onClick={() => setIsMenuOpen(false)}
           >
             <PhoneCall size={18} />
