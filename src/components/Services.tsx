@@ -123,7 +123,7 @@ export default function Services({ isEn, t }: ServicesProps) {
   } as const;
 
   return (
-    <section id="services" className="pb-24 pt-12 bg-[#131C31] border-t border-white/5 relative overflow-hidden">
+    <section id="services" className="pb-24 pt-12 bg-gradient-to-b from-[#0B1120] via-[#131C31] to-[#050810] relative overflow-hidden">
       {/* Decorative Blurs */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl -z-10" />

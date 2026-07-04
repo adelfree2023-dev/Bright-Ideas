@@ -18,7 +18,7 @@ export default function WhyUs({ isEn, t }: WhyUsProps) {
   ];
 
   return (
-    <section id="why-us" className="py-24 bg-[#131C31] text-text-light border-y border-white/5 relative overflow-hidden">
+    <section id="why-us" className="py-24 bg-gradient-to-b from-[#0B1120] via-[#131C31] to-[#0B1120] text-text-light relative overflow-hidden">
       {/* Decorative background grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-3xl -z-10" />
