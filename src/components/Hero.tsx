@@ -20,8 +20,8 @@ export default function Hero({ isEn, t }: HeroProps) {
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.09] transition-opacity duration-1000"
         style={{ backgroundImage: "url('/assets/man.webp')" }}
       />
-      {/* Radial Gradient overlay to blend it with dark theme */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 via-60% to-[#0B1120] z-0" />
+      {/* Radial Gradient overlay to blend it with light theme */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 via-60% to-slate-50 z-0" />
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[150px] -z-10" />
       <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[120px] -z-10" />
 

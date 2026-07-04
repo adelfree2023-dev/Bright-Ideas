@@ -53,43 +53,43 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#0B1120] relative">
+    <section id="contact" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Contact Information */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full">
             <div>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">
                 {t.contact.title}
               </h2>
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light mb-12">
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed font-semibold mb-12">
                 {t.contact.subtitle}
               </p>
 
               <div className="flex flex-col gap-8">
                 {/* Address */}
                 <div className="flex gap-4 items-start">
-                  <div className="bg-yellow-500/10 p-3 rounded-full text-yellow-500 shrink-0">
+                  <div className="bg-yellow-500/10 p-3 rounded-full text-yellow-600 shrink-0">
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-lg mb-1">
+                    <h4 className="font-bold text-slate-800 text-lg mb-1">
                       {t.contact.officeTitle}
                     </h4>
-                    <p className="text-gray-400 text-sm">{t.contact.officeDesc}</p>
+                    <p className="text-slate-600 text-sm font-semibold">{t.contact.officeDesc}</p>
                   </div>
                 </div>
 
                 {/* Phone */}
                 <div className="flex gap-4 items-start">
-                  <div className="bg-yellow-500/10 p-3 rounded-full text-yellow-500 shrink-0">
+                  <div className="bg-yellow-500/10 p-3 rounded-full text-yellow-600 shrink-0">
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-lg mb-1">
+                    <h4 className="font-bold text-slate-800 text-lg mb-1">
                       {t.contact.phoneTitle}
                     </h4>
-                    <p className="text-gray-400 text-sm" dir="ltr">
+                    <p className="text-slate-600 text-sm font-semibold" dir="ltr">
                       +974 55056698
                     </p>
                   </div>
@@ -97,14 +97,14 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
 
                 {/* Email */}
                 <div className="flex gap-4 items-start">
-                  <div className="bg-yellow-500/10 p-3 rounded-full text-yellow-500 shrink-0">
+                  <div className="bg-yellow-500/10 p-3 rounded-full text-yellow-600 shrink-0">
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-lg mb-1">
+                    <h4 className="font-bold text-slate-800 text-lg mb-1">
                       {t.contact.emailTitle}
                     </h4>
-                    <p className="text-gray-400 text-sm">info@brightideas-qa.com</p>
+                    <p className="text-slate-600 text-sm font-semibold">info@brightideas-qa.com</p>
                   </div>
                 </div>
               </div>
@@ -112,11 +112,11 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-7 bg-white/5 border border-white/5 p-8 md:p-10 rounded-3xl shadow-xl backdrop-blur-xl">
+          <div className="lg:col-span-7 bg-white border border-slate-200/80 p-8 md:p-10 rounded-3xl shadow-xl">
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               {/* Full Name */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="name" className="text-sm font-semibold text-gray-300">
+                <label htmlFor="name" className="text-sm font-bold text-slate-700">
                   {t.contact.nameLabel} *
                 </label>
                 <input
@@ -127,13 +127,13 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
                   onChange={handleChange}
                   required
                   placeholder={isEn ? "Enter your name" : "أدخل اسمك الكريم"}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-medium placeholder-gray-500"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 outline-none focus:bg-white focus:border-yellow-600 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-semibold placeholder-slate-400"
                 />
               </div>
 
               {/* Phone Number */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="phone" className="text-sm font-semibold text-gray-300">
+                <label htmlFor="phone" className="text-sm font-bold text-slate-700">
                   {t.contact.phoneLabel} *
                 </label>
                 <input
@@ -144,13 +144,13 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
                   onChange={handleChange}
                   required
                   placeholder="e.g. 55056698"
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-medium placeholder-gray-500"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 outline-none focus:bg-white focus:border-yellow-600 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-semibold placeholder-slate-400"
                 />
               </div>
 
               {/* Service Select */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="service" className="text-sm font-semibold text-gray-300">
+                <label htmlFor="service" className="text-sm font-bold text-slate-700">
                   {t.contact.serviceLabel}
                 </label>
                 <select
@@ -158,30 +158,30 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-[#0B1120] border border-white/10 text-white outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-medium"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 outline-none focus:bg-white focus:border-yellow-600 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-semibold"
                 >
-                  <option value="contracting" className="bg-[#0B1120]">
+                  <option value="contracting" className="bg-white text-slate-800">
                     {isEn ? "Contracting & Construction" : "أعمال المقاولات والإنشاءات"}
                   </option>
-                  <option value="finishing" className="bg-[#0B1120]">
+                  <option value="finishing" className="bg-white text-slate-800">
                     {isEn ? "Finishing & Decor" : "التشطيبات والديكور الداخلي"}
                   </option>
-                  <option value="mep" className="bg-[#0B1120]">
+                  <option value="mep" className="bg-white text-slate-800">
                     {isEn ? "Electrical & Plumbing (MEP)" : "الأعمال الكهروميكانيكية (MEP)"}
                   </option>
-                  <option value="ac" className="bg-[#0B1120]">
+                  <option value="ac" className="bg-white text-slate-800">
                     {isEn ? "AC Maintenance" : "صيانة التكييف"}
                   </option>
-                  <option value="cleaning" className="bg-[#0B1120]">
+                  <option value="cleaning" className="bg-white text-slate-800">
                     {isEn ? "Cleaning Services" : "خدمات النظافة"}
                   </option>
-                  <option value="floor" className="bg-[#0B1120]">
+                  <option value="floor" className="bg-white text-slate-800">
                     {isEn ? "Floor Polishing" : "جلي وتلميع الأرضيات"}
                   </option>
-                  <option value="pest" className="bg-[#0B1120]">
+                  <option value="pest" className="bg-white text-slate-800">
                     {isEn ? "Pest Control" : "مكافحة الحشرات"}
                   </option>
-                  <option value="moving" className="bg-[#0B1120]">
+                  <option value="moving" className="bg-white text-slate-800">
                     {isEn ? "Furniture Moving" : "نقل الأثاث والعفش"}
                   </option>
                 </select>
@@ -189,7 +189,7 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
 
               {/* Message Details */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="message" className="text-sm font-semibold text-gray-300">
+                <label htmlFor="message" className="text-sm font-bold text-slate-700">
                   {t.contact.messageLabel} *
                 </label>
                 <textarea
@@ -200,7 +200,7 @@ export default function ContactForm({ isEn, t }: ContactFormProps) {
                   required
                   rows={4}
                   placeholder={isEn ? "Describe your request..." : "اكتب تفاصيل طلبك هنا..."}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-medium resize-none placeholder-gray-500"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 outline-none focus:bg-white focus:border-yellow-600 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-semibold resize-none placeholder-slate-400"
                 />
               </div>
 

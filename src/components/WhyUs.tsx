@@ -18,9 +18,9 @@ export default function WhyUs({ isEn, t }: WhyUsProps) {
   ];
 
   return (
-    <section id="why-us" className="py-24 bg-gradient-to-b from-[#0B1120] via-[#131C31] to-[#0B1120] text-text-light relative overflow-hidden">
+    <section id="why-us" className="py-24 bg-slate-50 text-slate-800 relative overflow-hidden">
       {/* Decorative background grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -33,13 +33,13 @@ export default function WhyUs({ isEn, t }: WhyUsProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               key={idx}
-              className="bg-white/5 border border-white/5 p-6 rounded-2xl text-center backdrop-blur-sm shadow-md flex flex-col items-center justify-center hover:border-yellow-500/20 transition-colors"
+              className="bg-white border border-slate-200/80 p-6 rounded-2xl text-center shadow-md flex flex-col items-center justify-center hover:border-yellow-500/30 transition-colors"
             >
               <div className={`mb-4 ${stat.iconBg} p-3 rounded-full`}>{stat.icon}</div>
-              <div className="text-4xl md:text-5xl font-black text-yellow-500 mb-2 tracking-tight">
+              <div className="text-4xl md:text-5xl font-black text-amber-600 mb-2 tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-sm md:text-base text-text-light/75 font-medium">
+              <div className="text-sm md:text-base text-slate-700 font-semibold">
                 {stat.label}
               </div>
             </motion.div>
@@ -55,7 +55,7 @@ export default function WhyUs({ isEn, t }: WhyUsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight"
+              className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-900"
             >
               {t.whyUs.title}
             </motion.h2>
@@ -64,7 +64,7 @@ export default function WhyUs({ isEn, t }: WhyUsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-text-light/70 text-base md:text-lg leading-relaxed font-light mb-8"
+              className="text-slate-600 text-base md:text-lg leading-relaxed font-semibold mb-8"
             >
               {t.whyUs.subtitle}
             </motion.p>
@@ -86,12 +86,12 @@ export default function WhyUs({ isEn, t }: WhyUsProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
                 key={idx}
-                className="bg-white/5 border border-white/5 hover:border-yellow-500/20 p-6 rounded-xl hover:shadow-lg transition-all duration-300"
+                className="bg-white border border-slate-200/80 hover:border-yellow-500/30 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <h4 className="text-yellow-500 font-bold text-lg mb-2">
+                <h4 className="text-amber-700 font-bold text-lg mb-2">
                   {point.title}
                 </h4>
-                <p className="text-text-light/75 text-sm leading-relaxed font-light">
+                <p className="text-slate-600 text-sm leading-relaxed font-semibold">
                   {point.desc}
                 </p>
               </motion.div>

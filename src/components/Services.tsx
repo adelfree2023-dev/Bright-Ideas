@@ -123,7 +123,7 @@ export default function Services({ isEn, t }: ServicesProps) {
   } as const;
 
   return (
-    <section id="services" className="pb-24 pt-12 bg-gradient-to-b from-[#0B1120] via-[#131C31] to-[#050810] relative overflow-hidden">
+    <section id="services" className="pb-24 pt-12 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       {/* Decorative Blurs */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl -z-10" />
@@ -133,14 +133,14 @@ export default function Services({ isEn, t }: ServicesProps) {
         <div className="flex justify-end gap-3 mb-8">
           <button
             onClick={() => handleScroll("prev")}
-            className="w-12 h-12 rounded-full bg-white/5 hover:bg-yellow-500 text-gray-300 hover:text-black flex items-center justify-center shadow-md hover:shadow-lg border border-white/5 transition-all cursor-pointer transform active:scale-95"
+            className="w-12 h-12 rounded-full bg-slate-100 hover:bg-yellow-500 text-slate-700 hover:text-black flex items-center justify-center shadow-md hover:shadow-lg border border-slate-200 transition-all cursor-pointer transform active:scale-95"
             aria-label="Previous services"
           >
             {isEn ? <ChevronLeft size={24} /> : <ChevronRight size={24} />}
           </button>
           <button
             onClick={() => handleScroll("next")}
-            className="w-12 h-12 rounded-full bg-white/5 hover:bg-yellow-500 text-gray-300 hover:text-black flex items-center justify-center shadow-md hover:shadow-lg border border-white/5 transition-all cursor-pointer transform active:scale-95"
+            className="w-12 h-12 rounded-full bg-slate-100 hover:bg-yellow-500 text-slate-700 hover:text-black flex items-center justify-center shadow-md hover:shadow-lg border border-slate-200 transition-all cursor-pointer transform active:scale-95"
             aria-label="Next services"
           >
             {isEn ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
@@ -160,7 +160,7 @@ export default function Services({ isEn, t }: ServicesProps) {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="group bg-[#0B1120]/80 rounded-3xl p-8 border border-white/5 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-yellow-500/30 hover:bg-[#0B1120] flex flex-col justify-between h-[360px] w-[310px] md:w-[360px] flex-shrink-0 select-none"
+              className="group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-md hover:shadow-xl hover:border-yellow-500/30 hover:bg-slate-50/50 flex flex-col justify-between h-[360px] w-[310px] md:w-[360px] flex-shrink-0 select-none"
             >
               <div>
                 {/* Icon Container with hover animation */}
@@ -168,17 +168,17 @@ export default function Services({ isEn, t }: ServicesProps) {
                   {service.icon}
                 </div>
 
-                <h4 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">
+                <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-yellow-600 transition-colors">
                   {service.title}
                 </h4>
 
-                <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3 font-semibold">
                   {service.desc}
                 </p>
 
                 {/* Bullets if present */}
                 {service.bullets && service.bullets.length > 0 && (
-                  <ul className="flex flex-col gap-1.5 text-xs text-slate-500 group-hover:text-slate-400">
+                  <ul className="flex flex-col gap-1.5 text-xs text-slate-500 group-hover:text-slate-600 font-semibold">
                     {service.bullets.slice(0, 2).map((bullet: string, i: number) => (
                       <li key={i} className="flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
@@ -194,7 +194,7 @@ export default function Services({ isEn, t }: ServicesProps) {
                 href="https://wa.me/97455056698"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-yellow-600 font-semibold text-sm cursor-pointer self-start"
+                className="inline-flex items-center gap-2 text-yellow-600 font-bold text-sm cursor-pointer self-start hover:text-yellow-750"
               >
                 <span>{t.services.exploreMore}</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-x-1 ltr:group-hover:translate-x-1.5 rtl:group-hover:-translate-x-1.5">
