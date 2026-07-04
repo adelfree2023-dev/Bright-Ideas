@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 
@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "شركة بريفت أديس للتجارة والمقاولات | قطر",
   description: "شركة بريفت أديس للتجارة والمقاولات هي شريكك الموثوق لتنفيذ وصيانة وتجهيز المشاريع العقارية والخدمية بأعلى دقة واحترافية في قطر. خدمات المقاولات، الصيانة، التنظيف، ومكافحة الحشرات.",
   keywords: ["مقاولات قطر", "صيانة مباني الدوحة", "تنظيف فلل قطر", "مكافحة حشرات قطر", "نقل عفش قطر"],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
+  },
   openGraph: {
     title: "شركة بريفت أديس للتجارة والمقاولات | قطر",
     description: "حلول مقاولات وصيانة متكاملة بأعلى المعايير الهندسية في قطر.",
