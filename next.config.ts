@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
+const isVercel = process.env.VERCEL === '1';
+
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: '/Bright-Ideas',
+  output: isVercel ? undefined : 'export',
+  basePath: isVercel ? '' : '/Bright-Ideas',
   images: {
     unoptimized: true,
   },
