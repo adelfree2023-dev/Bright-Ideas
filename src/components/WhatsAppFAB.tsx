@@ -11,13 +11,15 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
     <>
       {/* Floating Call Button */}
       <a
-        href="tel:97455056698"
-        className={`fixed bottom-24 z-[999] w-14 h-14 rounded-full flex items-center justify-center bg-yellow-500 hover:bg-yellow-400 text-black shadow-2xl transition-all hover:scale-110 cursor-pointer ${
+        href="tel:+97455056698"
+        className={`fixed bottom-24 z-[999] w-14 h-14 rounded-full flex items-center justify-center bg-yellow-500 hover:bg-yellow-400 text-black shadow-lg hover:shadow-yellow-500/40 transition-all duration-300 hover:scale-110 cursor-pointer ${
           isEn ? "left-8" : "right-8"
         }`}
         aria-label="Call us directly"
       >
-        <Phone size={24} className="animate-pulse" />
+        {/* Sonar Ring Wave Effect */}
+        <span className="absolute inset-0 rounded-full bg-yellow-500/40 animate-ping -z-10" />
+        <Phone size={24} />
       </a>
 
       {/* Floating WhatsApp Button */}

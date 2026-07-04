@@ -26,8 +26,8 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "backdrop-blur-xl bg-[#0B1120]/80 border-b border-white/5 py-4 shadow-xl"
-          : "bg-transparent py-6 border-b border-transparent"
+          ? "bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-md"
+          : "bg-white border-b border-slate-100 py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -53,29 +53,29 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8">
-          <ul className="flex gap-6 text-gray-300 font-medium text-sm lg:text-base">
+          <ul className="flex gap-6 text-slate-800 font-semibold text-sm lg:text-base">
             <li>
-              <a href="#hero" className="hover:text-[#E63946] transition-colors">
+              <a href="#hero" className="hover:text-yellow-600 transition-colors">
                 {t.nav.home}
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:text-[#E63946] transition-colors">
+              <a href="#services" className="hover:text-yellow-600 transition-colors">
                 {t.nav.services}
               </a>
             </li>
             <li>
-              <a href="#why-us" className="hover:text-[#E63946] transition-colors">
+              <a href="#why-us" className="hover:text-yellow-600 transition-colors">
                 {t.nav.whyUs}
               </a>
             </li>
             <li>
-              <a href="#gallery" className="hover:text-[#E63946] transition-colors">
+              <a href="#gallery" className="hover:text-yellow-600 transition-colors">
                 {t.nav.portfolio}
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-[#E63946] transition-colors">
+              <a href="#contact" className="hover:text-yellow-600 transition-colors">
                 {t.nav.contact}
               </a>
             </li>
@@ -87,7 +87,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
           {/* Language Switcher */}
           <button
             onClick={() => setIsEn(!isEn)}
-            className="text-gray-300 hover:text-white border border-white/10 hover:border-white/30 px-3 py-1 rounded transition-colors text-sm font-semibold cursor-pointer"
+            className="text-slate-700 hover:text-yellow-600 border border-slate-200 hover:border-slate-300 px-3 py-1 rounded transition-colors text-sm font-semibold cursor-pointer"
           >
             {isEn ? "العربية" : "English"}
           </button>
@@ -107,13 +107,13 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
         <div className="flex items-center gap-3 md:hidden">
           <button
             onClick={() => setIsEn(!isEn)}
-            className="text-gray-300 hover:text-white border border-white/10 px-2.5 py-0.5 rounded text-xs cursor-pointer"
+            className="text-slate-700 hover:text-yellow-600 border border-slate-200 px-2.5 py-0.5 rounded text-xs cursor-pointer font-medium"
           >
             {isEn ? "العربية" : "EN"}
           </button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-gray-300 hover:text-white cursor-pointer"
+            className="text-slate-700 hover:text-black cursor-pointer"
             aria-label="Toggle Menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -123,13 +123,13 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-[#0B1120]/95 border-b border-white/5 backdrop-blur-xl absolute top-full left-0 w-full py-6 px-8 flex flex-col gap-6 shadow-2xl">
-          <ul className="flex flex-col gap-4 text-gray-300 text-lg font-medium">
+        <div className="md:hidden bg-white/95 border-b border-slate-200 backdrop-blur-md absolute top-full left-0 w-full py-6 px-8 flex flex-col gap-6 shadow-2xl">
+          <ul className="flex flex-col gap-4 text-slate-800 text-lg font-semibold">
             <li>
               <a
                 href="#hero"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-[#E63946] block"
+                className="hover:text-yellow-600 block"
               >
                 {t.nav.home}
               </a>
@@ -138,7 +138,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#services"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-[#E63946] block"
+                className="hover:text-yellow-600 block"
               >
                 {t.nav.services}
               </a>
@@ -147,7 +147,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#why-us"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-[#E63946] block"
+                className="hover:text-yellow-600 block"
               >
                 {t.nav.whyUs}
               </a>
@@ -156,7 +156,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#gallery"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-[#E63946] block"
+                className="hover:text-yellow-600 block"
               >
                 {t.nav.portfolio}
               </a>
@@ -165,7 +165,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-[#E63946] block"
+                className="hover:text-yellow-600 block"
               >
                 {t.nav.contact}
               </a>
