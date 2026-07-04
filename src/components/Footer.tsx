@@ -16,13 +16,21 @@ export default function Footer({ isEn, t }: FooterProps) {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
         {/* About */}
         <div className="md:col-span-5 flex flex-col gap-6">
-          <a href="#" className="inline-block self-start">
+          {/* Logo split into two side-by-side */}
+          <a href="#" className="flex items-center gap-2.5 self-start select-none">
             <Image
-              src="/assets/logo_transparent.webp"
-              alt="Bright Ideas Logo"
-              width={200}
-              height={85}
-              className="h-16 md:h-20 w-auto object-contain"
+              src="/assets/logo1.webp"
+              alt="Bright Ideas Logo Icon"
+              width={60}
+              height={60}
+              className="h-14 md:h-16 w-auto object-contain"
+            />
+            <Image
+              src="/assets/logo2.webp"
+              alt="Bright Ideas Logo Text"
+              width={150}
+              height={60}
+              className="h-10 md:h-12 w-auto object-contain"
             />
           </a>
           <p className="text-text-light/60 text-sm leading-relaxed font-light max-w-sm">

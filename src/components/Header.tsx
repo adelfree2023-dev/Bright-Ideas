@@ -31,14 +31,22 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <a href="#" className="flex items-center">
+        {/* Logo split into two side-by-side */}
+        <a href="#" className="flex items-center gap-2 select-none">
           <Image
-            src="/assets/logo_transparent.webp"
-            alt="Private Ideas Logo"
-            width={180}
-            height={75}
-            className="h-14 md:h-16 w-auto object-contain"
+            src="/assets/logo1.webp"
+            alt="Bright Ideas Logo Icon"
+            width={48}
+            height={48}
+            className="h-10 md:h-12 w-auto object-contain"
+            priority
+          />
+          <Image
+            src="/assets/logo2.webp"
+            alt="Bright Ideas Logo Text"
+            width={120}
+            height={48}
+            className="h-8 md:h-10 w-auto object-contain"
             priority
           />
         </a>
