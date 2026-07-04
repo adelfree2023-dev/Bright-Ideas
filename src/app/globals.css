@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #0b132b;
+  --color-primary-light: #1c2541;
+  --color-primary-dark: #070b16;
+  --color-gold: #d4af37;
+  --color-champagne: #c5a880;
+  --color-gold-hover: #c59b27;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #20ba5a;
+  --color-text-dark: #1e293b;
+  --color-text-muted: #64748b;
+  --color-text-light: #f8fafc;
+  --color-bg-light: #f8fafc;
+  --color-bg-white: #ffffff;
+  
+  --font-cairo: var(--font-cairo), 'Cairo', sans-serif;
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #1e293b;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-cairo);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Classes */
+.glass-header {
+  background-color: rgba(11, 19, 43, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card {
+  background-color: rgba(28, 37, 65, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b132b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5a880;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Animation utilities */
+@keyframes pulse-whatsapp {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-pulse-whatsapp {
+  animation: pulse-whatsapp 2s infinite;
+}
