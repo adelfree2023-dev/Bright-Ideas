@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Building2,
@@ -13,6 +13,8 @@ import {
   Truck,
   ArrowLeft,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 interface ServicesProps {
@@ -21,19 +23,20 @@ interface ServicesProps {
 }
 
 export default function Services({ isEn, t }: ServicesProps) {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
   // Icon mapping
   const icons = {
-    contracting: <Building2 className="w-8 h-8" />,
-    finishing: <Paintbrush className="w-8 h-8" />,
-    mep: <Zap className="w-8 h-8" />,
-    ac: <Wind className="w-8 h-8" />,
-    cleaning: <Sparkles className="w-8 h-8" />,
-    floor: <Layers className="w-8 h-8" />,
-    pest: <Bug className="w-8 h-8" />,
-    moving: <Truck className="w-8 h-8" />,
+    contracting: <Building2 className="w-6 h-6" />,
+    finishing: <Paintbrush className="w-6 h-6" />,
+    mep: <Zap className="w-6 h-6" />,
+    ac: <Wind className="w-6 h-6" />,
+    cleaning: <Sparkles className="w-6 h-6" />,
+    floor: <Layers className="w-6 h-6" />,
+    pest: <Bug className="w-6 h-6" />,
+    moving: <Truck className="w-6 h-6" />,
   };
 
-  // Compile the list of all services
   const services = [
     {
       icon: icons.contracting,
@@ -49,108 +52,136 @@ export default function Services({ isEn, t }: ServicesProps) {
     },
     {
       icon: icons.mep,
-      iconName: "mep",
       title: t.services.items.mep.title,
       desc: t.services.items.mep.desc,
       bullets: [],
     },
     {
       icon: icons.ac,
-      iconName: "ac",
       title: t.services.items.ac.title,
       desc: t.services.items.ac.desc,
       bullets: [],
     },
     {
       icon: icons.cleaning,
-      iconName: "cleaning",
       title: t.services.items.cleaning.title,
       desc: t.services.items.cleaning.desc,
       bullets: [],
     },
     {
       icon: icons.floor,
-      iconName: "floor",
       title: t.services.items.floor.title,
       desc: t.services.items.floor.desc,
       bullets: [],
     },
     {
       icon: icons.pest,
-      iconName: "pest",
       title: t.services.items.pest.title,
       desc: t.services.items.pest.desc,
       bullets: [],
     },
     {
       icon: icons.moving,
-      iconName: "moving",
       title: t.services.items.moving.title,
       desc: t.services.items.moving.desc,
       bullets: [],
     },
   ];
 
+  const handleScroll = (direction: "prev" | "next") => {
+    if (sliderRef.current) {
+      const cardWidth = 380; // card width + gap
+      let amount = direction === "next" ? cardWidth : -cardWidth;
+      // Reverse scroll direction for Arabic RTL
+      if (!isEn) {
+        amount = -amount;
+      }
+      sliderRef.current.scrollBy({ left: amount, behavior: "smooth" });
+    }
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  } as const;
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  } as const;
+
   return (
-    <section id="services" className="py-24 bg-bg-light relative overflow-hidden">
-      {/* Background Decorative Blurs */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-champagne/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -z-10" />
+    <section id="services" className="pb-24 pt-4 bg-[#0B1120] relative overflow-hidden">
+      {/* Decorative Blurs */}
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6 mb-16">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-extrabold text-primary mb-4"
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Floating Circle Navigation Arrows (RTL aligned to start, LTR to end) */}
+        <div className="flex justify-end gap-3 mb-8">
+          <button
+            onClick={() => handleScroll("prev")}
+            className="w-12 h-12 rounded-full bg-white/5 hover:bg-yellow-500 text-gray-300 hover:text-black flex items-center justify-center shadow-md hover:shadow-lg border border-white/5 transition-all cursor-pointer transform active:scale-95"
+            aria-label="Previous services"
           >
-            {t.services.title}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-text-muted text-base md:text-lg font-light"
+            {isEn ? <ChevronLeft size={24} /> : <ChevronRight size={24} />}
+          </button>
+          <button
+            onClick={() => handleScroll("next")}
+            className="w-12 h-12 rounded-full bg-white/5 hover:bg-yellow-500 text-gray-300 hover:text-black flex items-center justify-center shadow-md hover:shadow-lg border border-white/5 transition-all cursor-pointer transform active:scale-95"
+            aria-label="Next services"
           >
-            {t.services.subtitle}
-          </motion.p>
+            {isEn ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
+          </button>
         </div>
-      </div>
 
-      {/* Infinite Scrolling Marquee Wrapper */}
-      <div className="relative w-full overflow-hidden py-4 marquee-mask">
-        <div
-          className={`flex gap-6 ${
-            isEn ? "animate-marquee-rtl" : "animate-marquee-ltr"
-          }`}
+        {/* Carousel Container (stagger children on scroll) */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          ref={sliderRef}
+          className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth px-2 py-4 -mx-6 md:-mx-0"
         >
-          {/* Render double copy of the services list for seamless looping */}
-          {[...services, ...services].map((service, idx) => (
-            <div
-              key={idx}
-              className="w-[310px] md:w-[360px] h-[340px] flex-shrink-0 group bg-white hover:bg-primary hover:text-white rounded-2xl p-7 border border-border/80 shadow-sm hover:shadow-2xl hover:border-gold/30 transition-all duration-300 flex flex-col justify-between"
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className="group bg-white/5 rounded-3xl p-8 border border-white/5 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-yellow-500/30 hover:bg-white/10 flex flex-col justify-between h-[360px] w-[310px] md:w-[360px] flex-shrink-0 select-none"
             >
               <div>
-                <div className="text-gold group-hover:text-champagne mb-5 inline-block bg-gold/10 group-hover:bg-white/10 p-3 rounded-xl transition-colors">
+                {/* Icon Container with hover animation */}
+                <div className="text-yellow-600 bg-yellow-500/10 rounded-2xl p-4 w-fit transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 mb-6">
                   {service.icon}
                 </div>
-                <h4 className="text-lg md:text-xl font-bold mb-3 transition-colors">
+
+                <h4 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">
                   {service.title}
                 </h4>
-                <p className="text-text-muted group-hover:text-white/80 text-sm leading-relaxed mb-4 line-clamp-3">
+
+                <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
                   {service.desc}
                 </p>
 
                 {/* Bullets if present */}
                 {service.bullets && service.bullets.length > 0 && (
-                  <ul className="flex flex-col gap-1.5 text-xs text-text-muted group-hover:text-white/70">
+                  <ul className="flex flex-col gap-1.5 text-xs text-slate-500 group-hover:text-slate-400">
                     {service.bullets.slice(0, 2).map((bullet: string, i: number) => (
                       <li key={i} className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
                         <span className="truncate">{bullet}</span>
                       </li>
                     ))}
@@ -158,18 +189,21 @@ export default function Services({ isEn, t }: ServicesProps) {
                 )}
               </div>
 
+              {/* CTA Link with hover Arrow animation */}
               <a
                 href="https://wa.me/97455056698"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gold group-hover:text-champagne font-bold text-sm cursor-pointer self-start"
+                className="inline-flex items-center gap-2 text-yellow-600 font-semibold text-sm cursor-pointer self-start"
               >
                 <span>{t.services.exploreMore}</span>
-                {isEn ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
+                <span className="transform transition-transform duration-300 group-hover:translate-x-1 ltr:group-hover:translate-x-1.5 rtl:group-hover:-translate-x-1.5">
+                  {isEn ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
+                </span>
               </a>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

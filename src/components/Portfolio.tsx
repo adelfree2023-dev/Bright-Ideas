@@ -63,14 +63,14 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
   };
 
   return (
-    <section id="gallery" className="py-24 bg-bg-white relative">
+    <section id="gallery" className="py-24 bg-[#0B1120] relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
             {t.portfolio.title}
           </h2>
-          <p className="text-text-muted text-base md:text-lg font-light">
+          <p className="text-gray-400 text-base md:text-lg font-light">
             {t.portfolio.subtitle}
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all cursor-pointer ${
                 filter === btn.id
                   ? "bg-gold text-primary-dark shadow-md"
-                  : "bg-bg-light hover:bg-border/60 text-text-dark"
+                  : "bg-white/5 hover:bg-white/10 text-gray-300 border border-white/5"
               }`}
             >
               {btn.label}
@@ -111,7 +111,7 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
                 key={project.src}
-                className="group relative overflow-hidden rounded-xl aspect-square shadow-sm hover:shadow-lg border border-border cursor-pointer"
+                className="group relative overflow-hidden rounded-xl aspect-square shadow-sm hover:shadow-lg border border-white/5 cursor-pointer"
                 onClick={() => openLightbox(project.src)}
               >
                 {/* Image */}

@@ -30,9 +30,6 @@ export default function Home() {
         {/* Hero Section */}
         <Hero isEn={isEn} t={t} />
 
-        {/* Bento Services Section */}
-        <Services isEn={isEn} t={t} />
-
         {/* Why Choose Us & Statistics Section */}
         <WhyUs isEn={isEn} t={t} />
 
@@ -41,6 +38,9 @@ export default function Home() {
 
         {/* Contact Form Section */}
         <ContactForm isEn={isEn} t={t} />
+
+        {/* Bento Services Section */}
+        <Services isEn={isEn} t={t} />
       </main>
 
       {/* Footer */}

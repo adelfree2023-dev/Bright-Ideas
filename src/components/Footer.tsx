@@ -10,7 +10,7 @@ interface FooterProps {
 
 export default function Footer({ isEn, t }: FooterProps) {
   return (
-    <footer className="bg-primary-dark text-text-light border-t-2 border-gold py-16">
+    <footer className="bg-[#0B1120] text-text-light border-t border-white/5 py-16">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
         {/* About */}
         <div className="md:col-span-5 flex flex-col gap-6">
