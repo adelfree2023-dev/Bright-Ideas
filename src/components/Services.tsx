@@ -123,7 +123,7 @@ export default function Services({ isEn, t }: ServicesProps) {
   } as const;
 
   return (
-    <section id="services" className="pb-24 pt-4 bg-[#0B1120] relative overflow-hidden">
+    <section id="services" className="pb-24 pt-12 bg-[#131C31] border-t border-white/5 relative overflow-hidden">
       {/* Decorative Blurs */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl -z-10" />
@@ -160,7 +160,7 @@ export default function Services({ isEn, t }: ServicesProps) {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="group bg-white/5 rounded-3xl p-8 border border-white/5 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-yellow-500/30 hover:bg-white/10 flex flex-col justify-between h-[360px] w-[310px] md:w-[360px] flex-shrink-0 select-none"
+              className="group bg-[#0B1120]/80 rounded-3xl p-8 border border-white/5 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-yellow-500/30 hover:bg-[#0B1120] flex flex-col justify-between h-[360px] w-[310px] md:w-[360px] flex-shrink-0 select-none"
             >
               <div>
                 {/* Icon Container with hover animation */}

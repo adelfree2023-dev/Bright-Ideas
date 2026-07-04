@@ -111,7 +111,7 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
                 key={project.src}
-                className="group relative overflow-hidden rounded-xl aspect-square shadow-sm hover:shadow-lg border border-white/5 cursor-pointer"
+                className="group bg-[#131C31] relative overflow-hidden rounded-2xl aspect-square shadow-md hover:shadow-xl border border-white/5 cursor-pointer"
                 onClick={() => openLightbox(project.src)}
               >
                 {/* Image */}
@@ -122,19 +122,19 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                
+
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-primary-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
-                  <div className="self-end bg-gold/10 p-2.5 rounded-full text-gold">
+                <div className="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 z-20">
+                  <div className="self-end bg-yellow-500/10 p-2.5 rounded-full text-yellow-500">
                     <Maximize2 size={18} />
                   </div>
                   <div>
-                    <span className="text-gold text-xs font-bold uppercase tracking-wider mb-1 block">
+                    <span className="text-yellow-500 text-xs font-bold uppercase tracking-wider mb-1 block">
                       {project.category === "contracting" ? t.portfolio.filterContracting : 
                        project.category === "finishing" ? t.portfolio.filterFinishing : 
                        t.portfolio.filterServices}
                     </span>
-                    <h4 className="text-text-light font-bold text-lg leading-tight">
+                    <h4 className="text-white font-bold text-lg leading-tight">
                       {isEn ? project.titleEn : project.titleAr}
                     </h4>
                   </div>

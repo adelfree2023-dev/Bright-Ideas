@@ -16,7 +16,9 @@ export default function Hero({ isEn, t }: HeroProps) {
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0B1120] py-24"
     >
       {/* Premium spotlight background overlay using radial gradient */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-500/10 via-[#0B1120] to-[#0B1120]" />
+      <div className="absolute inset-0 z-0 bg-[#0B1120]" />
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[150px] -z-10" />
+      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[120px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center flex flex-col items-center justify-center">
         {/* Animated Subtitle Badge (Pill Style) */}
@@ -85,7 +87,7 @@ export default function Hero({ isEn, t }: HeroProps) {
             href="https://wa.me/97455056698"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-yellow-500 text-black font-semibold px-8 py-4 rounded-lg flex items-center justify-center gap-3 hover:bg-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-base md:text-lg"
+            className="w-full sm:w-auto bg-yellow-500 text-[#0B1120] font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-yellow-400 hover:shadow-[0_0_25px_rgba(234,179,8,0.4)] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-base md:text-lg"
           >
             <MessageCircle size={22} className="fill-current" />
             <span>{t.hero.ctaPrimary}</span>
@@ -94,7 +96,7 @@ export default function Hero({ isEn, t }: HeroProps) {
           {/* Secondary Outline CTA */}
           <a
             href="#services"
-            className="w-full sm:w-auto border border-gray-600 text-gray-300 font-semibold px-8 py-3.5 rounded-lg flex items-center justify-center gap-2 hover:bg-white/5 hover:border-white hover:text-white transition-all duration-300 cursor-pointer text-base md:text-lg"
+            className="w-full sm:w-auto border border-gray-600 text-gray-300 font-semibold px-8 py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-white/5 hover:border-white hover:text-white transition-all duration-300 cursor-pointer text-base md:text-lg"
           >
             <span>{t.hero.ctaSecondary}</span>
             {isEn ? <ArrowRight size={18} /> : <ArrowLeft size={18} />}

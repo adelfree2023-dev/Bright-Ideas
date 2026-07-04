@@ -47,27 +47,27 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
         <nav className="hidden md:flex items-center gap-8">
           <ul className="flex gap-6 text-gray-300 font-medium text-sm lg:text-base">
             <li>
-              <a href="#hero" className="hover:text-white transition-colors">
+              <a href="#hero" className="hover:text-[#E63946] transition-colors">
                 {t.nav.home}
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:text-white transition-colors">
+              <a href="#services" className="hover:text-[#E63946] transition-colors">
                 {t.nav.services}
               </a>
             </li>
             <li>
-              <a href="#why-us" className="hover:text-white transition-colors">
+              <a href="#why-us" className="hover:text-[#E63946] transition-colors">
                 {t.nav.whyUs}
               </a>
             </li>
             <li>
-              <a href="#gallery" className="hover:text-white transition-colors">
+              <a href="#gallery" className="hover:text-[#E63946] transition-colors">
                 {t.nav.portfolio}
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-white transition-colors">
+              <a href="#contact" className="hover:text-[#E63946] transition-colors">
                 {t.nav.contact}
               </a>
             </li>
@@ -121,7 +121,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#hero"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-white block"
+                className="hover:text-[#E63946] block"
               >
                 {t.nav.home}
               </a>
@@ -130,7 +130,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#services"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-white block"
+                className="hover:text-[#E63946] block"
               >
                 {t.nav.services}
               </a>
@@ -139,7 +139,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#why-us"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-white block"
+                className="hover:text-[#E63946] block"
               >
                 {t.nav.whyUs}
               </a>
@@ -148,7 +148,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#gallery"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-white block"
+                className="hover:text-[#E63946] block"
               >
                 {t.nav.portfolio}
               </a>
@@ -157,7 +157,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
               <a
                 href="#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-white block"
+                className="hover:text-[#E63946] block"
               >
                 {t.nav.contact}
               </a>
