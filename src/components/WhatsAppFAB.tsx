@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 
 interface WhatsAppFABProps {
@@ -17,7 +17,7 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
       aria-label="Contact us on WhatsApp"
     >
       <Image
-        src="/Bright-Ideas/assets/whatsapp_icon.webp"
+        src="/assets/whatsapp_icon.webp"
         alt="WhatsApp"
         width={56}
         height={56}
@@ -27,3 +27,4 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
     </a>
   );
 }
+

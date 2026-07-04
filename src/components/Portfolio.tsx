@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,23 +16,23 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
 
   // Map optimized images to realistic project details
   const projects = [
-    { src: "/Bright-Ideas/assets/gallery_img_2.webp", category: "contracting", tag: "contracting", titleAr: "إنشاء فيلا سكنية فاخرة", titleEn: "Luxury Residential Villa Construction" },
-    { src: "/Bright-Ideas/assets/gallery_img_5.webp", category: "contracting", tag: "contracting", titleAr: "هيكل معدني لمستودع تجاري", titleEn: "Commercial Hangar Steel Structure" },
-    { src: "/Bright-Ideas/assets/gallery_img_10.webp", category: "contracting", tag: "contracting", titleAr: "تشييد مبنى تجاري متعدد الاستخدامات", titleEn: "Multi-use Commercial Building Construction" },
-    { src: "/Bright-Ideas/assets/gallery_img_12.webp", category: "contracting", tag: "contracting", titleAr: "أعمال صيانة هيكلية للمباني", titleEn: "Structural Building Restoration" },
-    { src: "/Bright-Ideas/assets/gallery_img_15.webp", category: "contracting", tag: "contracting", titleAr: "بناء ملحق فيلا سكني", titleEn: "Residential Villa Annex Construction" },
+    { src: "/assets/gallery_img_2.webp", category: "contracting", tag: "contracting", titleAr: "إنشاء فيلا سكنية فاخرة", titleEn: "Luxury Residential Villa Construction" },
+    { src: "/assets/gallery_img_5.webp", category: "contracting", tag: "contracting", titleAr: "هيكل معدني لمستودع تجاري", titleEn: "Commercial Hangar Steel Structure" },
+    { src: "/assets/gallery_img_10.webp", category: "contracting", tag: "contracting", titleAr: "تشييد مبنى تجاري متعدد الاستخدامات", titleEn: "Multi-use Commercial Building Construction" },
+    { src: "/assets/gallery_img_12.webp", category: "contracting", tag: "contracting", titleAr: "أعمال صيانة هيكلية للمباني", titleEn: "Structural Building Restoration" },
+    { src: "/assets/gallery_img_15.webp", category: "contracting", tag: "contracting", titleAr: "بناء ملحق فيلا سكني", titleEn: "Residential Villa Annex Construction" },
     
-    { src: "/Bright-Ideas/assets/gallery_img_3.webp", category: "finishing", tag: "finishing", titleAr: "تركيب سيراميك وبورسلان فيلا", titleEn: "Ceramic & Porcelain Installation in Villa" },
-    { src: "/Bright-Ideas/assets/gallery_img_4.webp", category: "finishing", tag: "finishing", titleAr: "دهانات وديكورات داخلية حديثة", titleEn: "Modern Interior Paint & Decorations" },
-    { src: "/Bright-Ideas/assets/gallery_img_7.webp", category: "finishing", tag: "finishing", titleAr: "تلميع وجلي أرضيات رخام طبيعي", titleEn: "Natural Marble Grinding & Polishing" },
-    { src: "/Bright-Ideas/assets/gallery_img_13.webp", category: "finishing", tag: "finishing", titleAr: "تنفيذ جبس بورد أسقف معلقة", titleEn: "Gypsum Board Suspended Ceilings" },
-    { src: "/Bright-Ideas/assets/gallery_img_14.webp", category: "finishing", tag: "finishing", titleAr: "تركيب أرضيات جرانيت فاخرة", titleEn: "Luxury Granite Floor Installation" },
+    { src: "/assets/gallery_img_3.webp", category: "finishing", tag: "finishing", titleAr: "تركيب سيراميك وبورسلان فيلا", titleEn: "Ceramic & Porcelain Installation in Villa" },
+    { src: "/assets/gallery_img_4.webp", category: "finishing", tag: "finishing", titleAr: "دهانات وديكورات داخلية حديثة", titleEn: "Modern Interior Paint & Decorations" },
+    { src: "/assets/gallery_img_7.webp", category: "finishing", tag: "finishing", titleAr: "تلميع وجلي أرضيات رخام طبيعي", titleEn: "Natural Marble Grinding & Polishing" },
+    { src: "/assets/gallery_img_13.webp", category: "finishing", tag: "finishing", titleAr: "تنفيذ جبس بورد أسقف معلقة", titleEn: "Gypsum Board Suspended Ceilings" },
+    { src: "/assets/gallery_img_14.webp", category: "finishing", tag: "finishing", titleAr: "تركيب أرضيات جرانيت فاخرة", titleEn: "Luxury Granite Floor Installation" },
     
-    { src: "/Bright-Ideas/assets/gallery_img_1.webp", category: "services", tag: "services", titleAr: "تنظيف وتعقيم ما بعد تشطيب الفلل", titleEn: "Post-Construction Villa Deep Cleaning" },
-    { src: "/Bright-Ideas/assets/gallery_img_6.webp", category: "services", tag: "services", titleAr: "تنظيف سجاد ومجالس بالبخار", titleEn: "Steam Cleaning for Majlis & Carpets" },
-    { src: "/Bright-Ideas/assets/gallery_img_8.webp", category: "services", tag: "services", titleAr: "مكافحة حشرات وقائية للمنازل", titleEn: "Residential Preventative Pest Control" },
-    { src: "/Bright-Ideas/assets/gallery_img_9.webp", category: "services", tag: "services", titleAr: "تطهير وتعقيم دوري للمكاتب", titleEn: "Corporate Office Regular Sanitization" },
-    { src: "/Bright-Ideas/assets/gallery_img_16.webp", category: "services", tag: "services", titleAr: "نقل وتغليف عفش فيلا سكنية", titleEn: "Residential Villa Furniture Relocation" },
+    { src: "/assets/gallery_img_1.webp", category: "services", tag: "services", titleAr: "تنظيف وتعقيم ما بعد تشطيب الفلل", titleEn: "Post-Construction Villa Deep Cleaning" },
+    { src: "/assets/gallery_img_6.webp", category: "services", tag: "services", titleAr: "تنظيف سجاد ومجالس بالبخار", titleEn: "Steam Cleaning for Majlis & Carpets" },
+    { src: "/assets/gallery_img_8.webp", category: "services", tag: "services", titleAr: "مكافحة حشرات وقائية للمنازل", titleEn: "Residential Preventative Pest Control" },
+    { src: "/assets/gallery_img_9.webp", category: "services", tag: "services", titleAr: "تطهير وتعقيم دوري للمكاتب", titleEn: "Corporate Office Regular Sanitization" },
+    { src: "/assets/gallery_img_16.webp", category: "services", tag: "services", titleAr: "نقل وتغليف عفش فيلا سكنية", titleEn: "Residential Villa Furniture Relocation" },
   ];
 
   const filteredProjects = filter === "all" 
@@ -202,3 +202,4 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
     </section>
   );
 }
+

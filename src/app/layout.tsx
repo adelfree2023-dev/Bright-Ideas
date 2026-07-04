@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Bright Ideas",
     images: [
       {
-        url: "/Bright-Ideas/assets/logo.png",
+        url: "/assets/logo.png",
         width: 800,
         height: 600,
       },
@@ -42,3 +42,4 @@ export default function RootLayout({
     </html>
   );
 }
+
