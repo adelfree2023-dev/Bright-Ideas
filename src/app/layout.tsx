@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Bright Ideas",
     images: [
       {
-        url: "/assets/logo.png",
+        url: "/Bright-Ideas/assets/logo.png",
         width: 800,
         height: 600,
       },

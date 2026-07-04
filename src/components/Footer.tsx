@@ -16,7 +16,7 @@ export default function Footer({ isEn, t }: FooterProps) {
         <div className="md:col-span-5 flex flex-col gap-6">
           <a href="#" className="inline-block self-start">
             <Image
-              src="/assets/logo_transparent.png"
+              src="/Bright-Ideas/assets/logo_transparent.png"
               alt="Bright Ideas Logo"
               width={130}
               height={55}

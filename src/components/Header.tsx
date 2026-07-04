@@ -19,7 +19,7 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
         {/* Logo */}
         <a href="#" className="flex items-center">
           <Image
-            src="/assets/logo_transparent.png"
+            src="/Bright-Ideas/assets/logo_transparent.png"
             alt="Private Ideas Logo"
             width={120}
             height={50}
