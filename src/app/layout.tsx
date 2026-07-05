@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const cairo = Cairo({
@@ -41,6 +42,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" className={`${cairo.variable} scroll-smooth`}>
+      <head>
+        {/* Google Ads Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18300378053"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18300378053');
+          `}
+        </Script>
+      </head>
       <body className="antialiased min-h-screen bg-bg-light text-text-dark font-cairo">
         {children}
       </body>
