@@ -4,13 +4,12 @@ const isVercel = process.env.VERCEL === '1';
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://cdn.vercel-insights.com https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net;
-  script-src-elem 'self' 'unsafe-inline' https://va.vercel-scripts.com https://cdn.vercel-insights.com https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://cdn.vercel-insights.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  img-src 'self' data: blob: https://wa.me https://www.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com https://www.google-analytics.com;
+  img-src 'self' data: blob: https://wa.me;
   font-src 'self' https://fonts.gstatic.com data:;
-  connect-src 'self' https://vitals.vercel-insights.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.google.com https://*.googleadservices.com;
-  frame-src 'self' https://bid.g.doubleclick.net;
+  connect-src 'self' https://vitals.vercel-insights.com;
+  frame-src 'self';
   media-src 'self';
 `.replace(/\s{2,}/g, ' ').trim();
 
