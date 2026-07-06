@@ -115,9 +115,20 @@ ${formData.message}`;
                     <h4 className="font-bold text-slate-800 text-lg mb-1">
                       {t.contact.phoneTitle}
                     </h4>
-                    <p className="text-slate-600 text-sm font-semibold" dir="ltr">
+                    <a
+                      href="tel:+97455056698"
+                      onClick={() => {
+                        if (typeof window !== "undefined" && (window as any).gtag) {
+                          (window as any).gtag("event", "conversion", {
+                            send_to: "AW-18248508524/dCdkCJ7G88scEOzIyP1D",
+                          });
+                        }
+                      }}
+                      className="text-slate-600 hover:text-yellow-600 transition-colors text-sm font-semibold block"
+                      dir="ltr"
+                    >
                       +974 55056698
-                    </p>
+                    </a>
                   </div>
                 </div>
 

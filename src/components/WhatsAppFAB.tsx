@@ -12,6 +12,13 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
       {/* Floating Call Button */}
       <a
         href="tel:+97455056698"
+        onClick={() => {
+          if (typeof window !== "undefined" && (window as any).gtag) {
+            (window as any).gtag("event", "conversion", {
+              send_to: "AW-18248508524/dCdkCJ7G88scEOzIyP1D",
+            });
+          }
+        }}
         className={`fixed bottom-24 z-[999] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-blue-400/40 transition-all duration-300 hover:scale-110 cursor-pointer ${
           isEn ? "left-8" : "right-8"
         }`}
