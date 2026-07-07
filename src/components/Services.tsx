@@ -203,7 +203,7 @@ export default function Services({ isEn, t }: ServicesProps) {
                     });
                     // Trigger Google Ads conversion
                     (window as any).gtag("event", "conversion", {
-                      send_to: "AW-18248508524/whatsapp_click_placeholder",
+                      send_to: "AW-18300378053/0rDLCMlyycwEMW3ppZE",
                     });
                   }
                 }}

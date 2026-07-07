@@ -48,9 +48,9 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
               event_category: "Contact",
               event_label: "Floating WhatsApp Button",
             });
-            // Trigger Google Ads conversion (Replace placeholder label if you create one in Google Ads)
+            // Trigger Google Ads conversion
             (window as any).gtag("event", "conversion", {
-              send_to: "AW-18248508524/whatsapp_click_placeholder", 
+              send_to: "AW-18300378053/0rDLCMlyycwEMW3ppZE", 
             });
           }
         }}
