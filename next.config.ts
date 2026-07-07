@@ -4,12 +4,12 @@ const isVercel = process.env.VERCEL === '1';
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://cdn.vercel-insights.com;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://cdn.vercel-insights.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google-analytics.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  img-src 'self' data: blob: https://wa.me;
+  img-src 'self' data: blob: https://wa.me https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://*.doubleclick.net https://*.google.com https://www.google.com https://www.google-analytics.com;
   font-src 'self' https://fonts.gstatic.com data:;
-  connect-src 'self' https://vitals.vercel-insights.com;
-  frame-src 'self';
+  connect-src 'self' https://vitals.vercel-insights.com https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net https://www.googleadservices.com https://googleads.g.doubleclick.net https://*.doubleclick.net https://*.google.com https://www.google.com;
+  frame-src 'self' https://td.doubleclick.net https://*.doubleclick.net https://*.google.com https://www.google.com;
   media-src 'self';
 `.replace(/\s{2,}/g, ' ').trim();
 
