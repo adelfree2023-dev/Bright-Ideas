@@ -194,6 +194,19 @@ export default function Services({ isEn, t }: ServicesProps) {
                 href="https://wa.me/97455056698"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== "undefined" && (window as any).gtag) {
+                    // Track WhatsApp click event in GA4
+                    (window as any).gtag("event", "click_whatsapp", {
+                      event_category: "Contact",
+                      event_label: `Services Explore More - ${service.title}`,
+                    });
+                    // Trigger Google Ads conversion
+                    (window as any).gtag("event", "conversion", {
+                      send_to: "AW-18248508524/whatsapp_click_placeholder",
+                    });
+                  }
+                }}
                 className="inline-flex items-center gap-2 text-yellow-600 font-bold text-sm cursor-pointer self-start hover:text-yellow-750"
               >
                 <span>{t.services.exploreMore}</span>

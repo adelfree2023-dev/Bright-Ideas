@@ -93,6 +93,19 @@ export default function Hero({ isEn, t }: HeroProps) {
             href="https://wa.me/97455056698"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                // Track WhatsApp click event in GA4
+                (window as any).gtag("event", "click_whatsapp", {
+                  event_category: "Contact",
+                  event_label: "Hero Primary WhatsApp Button",
+                });
+                // Trigger Google Ads conversion
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-18248508524/whatsapp_click_placeholder",
+                });
+              }
+            }}
             className="w-full sm:w-auto bg-yellow-500 text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-yellow-400 hover:shadow-[0_0_25px_rgba(234,179,8,0.4)] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-base md:text-lg"
           >
             <MessageCircle size={22} className="fill-current" />

@@ -41,6 +41,19 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
         href="https://wa.me/97455056698"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => {
+          if (typeof window !== "undefined" && (window as any).gtag) {
+            // Track WhatsApp click event in GA4
+            (window as any).gtag("event", "click_whatsapp", {
+              event_category: "Contact",
+              event_label: "Floating WhatsApp Button",
+            });
+            // Trigger Google Ads conversion (Replace placeholder label if you create one in Google Ads)
+            (window as any).gtag("event", "conversion", {
+              send_to: "AW-18248508524/whatsapp_click_placeholder", 
+            });
+          }
+        }}
         className={`fixed bottom-8 z-[999] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-105 animate-pulse-whatsapp cursor-pointer ${
           isEn ? "left-8" : "right-8"
         }`}

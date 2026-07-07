@@ -96,6 +96,19 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
             href="https://wa.me/97455056698"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                // Track WhatsApp click event in GA4
+                (window as any).gtag("event", "click_whatsapp", {
+                  event_category: "Contact",
+                  event_label: "Header Desktop Get Quote Button",
+                });
+                // Trigger Google Ads conversion
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-18248508524/whatsapp_click_placeholder",
+                });
+              }
+            }}
             className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 shadow-md hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all transform hover:-translate-y-0.5 cursor-pointer text-sm"
           >
             <PhoneCall size={16} />
@@ -177,7 +190,20 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={() => {
+              setIsMenuOpen(false);
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                // Track WhatsApp click event in GA4
+                (window as any).gtag("event", "click_whatsapp", {
+                  event_category: "Contact",
+                  event_label: "Header Mobile Get Quote Button",
+                });
+                // Trigger Google Ads conversion
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-18248508524/whatsapp_click_placeholder",
+                });
+              }
+            }}
           >
             <PhoneCall size={18} />
             <span>{t.nav.getQuote}</span>

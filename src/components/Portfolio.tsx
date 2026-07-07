@@ -277,6 +277,19 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => {
+                      if (typeof window !== "undefined" && (window as any).gtag) {
+                        // Track WhatsApp click event in GA4
+                        (window as any).gtag("event", "click_whatsapp", {
+                          event_category: "Contact",
+                          event_label: `Portfolio Request - ${project.titleEn}`,
+                        });
+                        // Trigger Google Ads conversion
+                        (window as any).gtag("event", "conversion", {
+                          send_to: "AW-18248508524/whatsapp_click_placeholder",
+                        });
+                      }
+                    }}
                     className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 shadow-md text-sm cursor-pointer"
                   >
                     <Image

@@ -57,6 +57,20 @@ ${formData.message}`;
 
     const waUrl = `https://wa.me/97455056698?text=${encodeURIComponent(waMessage)}`;
 
+    // Trigger conversion events on form submission
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      // Track Contact Form Submit event in GA4
+      (window as any).gtag("event", "submit_contact_form", {
+        event_category: "Contact",
+        event_label: "Contact Form Submit",
+        service_requested: serviceName,
+      });
+      // Trigger Google Ads conversion
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-18248508524/form_submit_placeholder",
+      });
+    }
+
     // Open WhatsApp in a new tab
     window.open(waUrl, "_blank");
 
