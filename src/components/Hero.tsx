@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, MessageCircle, PhoneCall } from "lucide-react";
 
 interface HeroProps {
   isEn: boolean;
@@ -31,7 +31,7 @@ export default function Hero({ isEn, t }: HeroProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yellow-600/30 bg-yellow-50/80 text-yellow-700 text-sm font-semibold tracking-wide mb-8 shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yellow-600/30 bg-yellow-50/80 text-yellow-700 text-sm font-semibold tracking-wide mb-6 shadow-sm"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-yellow-600 animate-pulse" />
           <span>{t.hero.subtitle}</span>
@@ -54,7 +54,7 @@ export default function Hero({ isEn, t }: HeroProps) {
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-amber-600 to-yellow-600">
                 Quality
               </span>{" "}
-              Standards ✨
+              Standards
             </>
           ) : (
             <>
@@ -65,8 +65,7 @@ export default function Hero({ isEn, t }: HeroProps) {
               ... بمعايير{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-amber-600 to-yellow-600">
                 الجودة
-              </span>{" "}
-              ✨
+              </span>
             </>
           )}
         </motion.h1>
@@ -76,21 +75,41 @@ export default function Hero({ isEn, t }: HeroProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="text-slate-700 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed font-medium"
+          className="text-slate-700 text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed font-medium"
         >
           {t.hero.desc}
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* Prominent Direct Phone & WhatsApp Highlight Bar */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="mb-8 p-3 px-6 rounded-2xl bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border border-yellow-500/40 shadow-sm flex flex-wrap items-center justify-center gap-4 text-slate-800"
+        >
+          <span className="text-sm md:text-base font-bold text-slate-700">
+            {isEn ? "Direct Hotline & WhatsApp:" : "الخط المباشر والواتساب:"}
+          </span>
+          <a
+            href="tel:+97431077466"
+            className="inline-flex items-center gap-2 text-yellow-700 hover:text-yellow-600 font-extrabold text-lg md:text-xl tracking-wider hover:underline"
+            dir="ltr"
+          >
+            <PhoneCall size={18} className="text-yellow-600 animate-bounce" />
+            <span>+974 31077466</span>
+          </a>
+        </motion.div>
+
+        {/* CTA Buttons Cluster */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full sm:w-auto"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto"
         >
-          {/* Primary Gold/Yellow CTA */}
+          {/* Primary Gold/Yellow WhatsApp CTA */}
           <a
-            href="https://wa.me/97455056698"
+            href="https://wa.me/97431077466"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
@@ -106,16 +125,36 @@ export default function Hero({ isEn, t }: HeroProps) {
                 });
               }
             }}
-            className="w-full sm:w-auto bg-yellow-500 text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-yellow-400 hover:shadow-[0_0_25px_rgba(234,179,8,0.4)] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-base md:text-lg"
+            className="w-full sm:w-auto bg-yellow-500 text-black font-bold px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 hover:bg-yellow-400 hover:shadow-[0_0_25px_rgba(234,179,8,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-base md:text-lg"
           >
-            <MessageCircle size={22} className="fill-current" />
+            <MessageCircle size={20} className="fill-current" />
             <span>{t.hero.ctaPrimary}</span>
+          </a>
+
+          {/* Direct Call Button */}
+          <a
+            href="tel:+97431077466"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "click_call", {
+                  event_category: "Contact",
+                  event_label: "Hero Direct Call Button",
+                });
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-18248508524/dCdkCJ7G88scEOzIyP1D",
+                });
+              }
+            }}
+            className="w-full sm:w-auto bg-slate-900 text-white font-bold px-7 py-3.5 rounded-xl flex items-center justify-center gap-2.5 hover:bg-slate-800 hover:shadow-[0_0_25px_rgba(15,23,42,0.3)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-base md:text-lg"
+          >
+            <PhoneCall size={20} className="text-yellow-400" />
+            <span>{t.hero.callPrimary}</span>
           </a>
 
           {/* Secondary Outline CTA */}
           <a
             href="#services"
-            className="w-full sm:w-auto border border-slate-350 text-slate-800 font-semibold px-8 py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-slate-100 hover:border-slate-400 hover:text-slate-900 bg-white/70 transition-all duration-300 cursor-pointer text-base md:text-lg shadow-sm"
+            className="w-full sm:w-auto border border-slate-300 text-slate-800 font-semibold px-6 py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-slate-100 hover:border-slate-400 hover:text-slate-900 bg-white/70 transition-all duration-300 cursor-pointer text-base shadow-sm"
           >
             <span>{t.hero.ctaSecondary}</span>
             {isEn ? <ArrowRight size={18} /> : <ArrowLeft size={18} />}
@@ -142,3 +181,4 @@ export default function Hero({ isEn, t }: HeroProps) {
     </section>
   );
 }
+

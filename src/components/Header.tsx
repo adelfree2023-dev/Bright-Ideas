@@ -83,17 +83,39 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
         </nav>
 
         {/* Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
           {/* Language Switcher */}
           <button
             onClick={() => setIsEn(!isEn)}
-            className="text-slate-700 hover:text-yellow-600 border border-slate-200 hover:border-slate-300 px-3 py-1 rounded transition-colors text-sm font-semibold cursor-pointer"
+            className="text-slate-700 hover:text-yellow-600 border border-slate-200 hover:border-slate-300 px-3 py-1.5 rounded-lg transition-colors text-sm font-semibold cursor-pointer"
           >
             {isEn ? "العربية" : "English"}
           </button>
-          {/* Get Quote CTA */}
+
+          {/* Direct Call Button */}
           <a
-            href="https://wa.me/97455056698"
+            href="tel:+97431077466"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "click_call", {
+                  event_category: "Contact",
+                  event_label: "Header Desktop Call Button",
+                });
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-18248508524/dCdkCJ7G88scEOzIyP1D",
+                });
+              }
+            }}
+            className="border border-yellow-500 text-yellow-700 hover:bg-yellow-50 font-bold px-4 py-2 rounded-lg flex items-center gap-2 transition-all cursor-pointer text-sm"
+            dir="ltr"
+          >
+            <PhoneCall size={16} className="text-yellow-600" />
+            <span>31077466</span>
+          </a>
+
+          {/* Get Quote / WhatsApp CTA */}
+          <a
+            href="https://wa.me/97431077466"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
@@ -109,27 +131,45 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
                 });
               }
             }}
-            className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2 shadow-md hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all transform hover:-translate-y-0.5 cursor-pointer text-sm"
+            className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-5 py-2 rounded-lg flex items-center gap-2 shadow-md hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all transform hover:-translate-y-0.5 cursor-pointer text-sm"
           >
-            <PhoneCall size={16} />
             <span>{t.nav.getQuote}</span>
           </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="flex items-center gap-3 md:hidden">
+        {/* Mobile Toggle & Direct Call */}
+        <div className="flex items-center gap-2 md:hidden">
+          <a
+            href="tel:+97431077466"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "click_call", {
+                  event_category: "Contact",
+                  event_label: "Header Mobile Top Call Button",
+                });
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-18248508524/dCdkCJ7G88scEOzIyP1D",
+                });
+              }
+            }}
+            className="bg-yellow-500 text-black px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer"
+            aria-label="Call 31077466"
+          >
+            <PhoneCall size={13} />
+            <span dir="ltr">31077466</span>
+          </a>
           <button
             onClick={() => setIsEn(!isEn)}
-            className="text-slate-700 hover:text-yellow-600 border border-slate-200 px-2.5 py-0.5 rounded text-xs cursor-pointer font-medium"
+            className="text-slate-700 hover:text-yellow-600 border border-slate-200 px-2 py-0.5 rounded text-xs cursor-pointer font-medium"
           >
             {isEn ? "العربية" : "EN"}
           </button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-slate-700 hover:text-black cursor-pointer"
+            className="text-slate-700 hover:text-black cursor-pointer p-1"
             aria-label="Toggle Menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
@@ -185,29 +225,50 @@ export default function Header({ isEn, setIsEn, t }: HeaderProps) {
             </li>
           </ul>
 
-          <a
-            href="https://wa.me/97455056698"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]"
-            onClick={() => {
-              setIsMenuOpen(false);
-              if (typeof window !== "undefined" && (window as any).gtag) {
-                // Track WhatsApp click event in GA4
-                (window as any).gtag("event", "click_whatsapp", {
-                  event_category: "Contact",
-                  event_label: "Header Mobile Get Quote Button",
-                });
-                // Trigger Google Ads conversion
-                (window as any).gtag("event", "conversion", {
-                  send_to: "AW-18300378053/0rDLCMlyycwEMW3ppZE",
-                });
-              }
-            }}
-          >
-            <PhoneCall size={18} />
-            <span>{t.nav.getQuote}</span>
-          </a>
+          <div className="flex flex-col gap-3">
+            <a
+              href="tel:+97431077466"
+              onClick={() => {
+                setIsMenuOpen(false);
+                if (typeof window !== "undefined" && (window as any).gtag) {
+                  (window as any).gtag("event", "click_call", {
+                    event_category: "Contact",
+                    event_label: "Header Mobile Menu Call Button",
+                  });
+                  (window as any).gtag("event", "conversion", {
+                    send_to: "AW-18248508524/dCdkCJ7G88scEOzIyP1D",
+                  });
+                }
+              }}
+              className="border-2 border-yellow-500 text-slate-900 text-center font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer bg-yellow-50/50"
+            >
+              <PhoneCall size={18} className="text-yellow-600" />
+              <span dir="ltr">+974 31077466</span>
+            </a>
+
+            <a
+              href="https://wa.me/97431077466"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-500 hover:bg-yellow-400 text-black text-center font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]"
+              onClick={() => {
+                setIsMenuOpen(false);
+                if (typeof window !== "undefined" && (window as any).gtag) {
+                  // Track WhatsApp click event in GA4
+                  (window as any).gtag("event", "click_whatsapp", {
+                    event_category: "Contact",
+                    event_label: "Header Mobile Get Quote Button",
+                  });
+                  // Trigger Google Ads conversion
+                  (window as any).gtag("event", "conversion", {
+                    send_to: "AW-18300378053/0rDLCMlyycwEMW3ppZE",
+                  });
+                }
+              }}
+            >
+              <span>{t.nav.getQuote}</span>
+            </a>
+          </div>
         </div>
       )}
     </header>

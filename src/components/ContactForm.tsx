@@ -55,7 +55,7 @@ ${formData.message}`
 • *تفاصيل الاستفسار:*
 ${formData.message}`;
 
-    const waUrl = `https://wa.me/97455056698?text=${encodeURIComponent(waMessage)}`;
+    const waUrl = `https://wa.me/97431077466?text=${encodeURIComponent(waMessage)}`;
 
     // Trigger conversion events on form submission
     if (typeof window !== "undefined" && (window as any).gtag) {
@@ -130,9 +130,13 @@ ${formData.message}`;
                       {t.contact.phoneTitle}
                     </h4>
                     <a
-                      href="tel:+97455056698"
+                      href="tel:+97431077466"
                       onClick={() => {
                         if (typeof window !== "undefined" && (window as any).gtag) {
+                          (window as any).gtag("event", "click_call", {
+                            event_category: "Contact",
+                            event_label: "Contact Section Direct Call",
+                          });
                           (window as any).gtag("event", "conversion", {
                             send_to: "AW-18248508524/dCdkCJ7G88scEOzIyP1D",
                           });
@@ -141,7 +145,7 @@ ${formData.message}`;
                       className="text-slate-600 hover:text-yellow-600 transition-colors text-sm font-semibold block"
                       dir="ltr"
                     >
-                      +974 55056698
+                      +974 31077466
                     </a>
                   </div>
                 </div>
@@ -194,7 +198,7 @@ ${formData.message}`;
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  placeholder="e.g. 55056698"
+                  placeholder="e.g. 31077466"
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 outline-none focus:bg-white focus:border-yellow-600 focus:ring-2 focus:ring-yellow-500/15 transition-all text-sm font-semibold placeholder-slate-400"
                 />
               </div>

@@ -1,0 +1,17 @@
+/* TEAM */
+Developer: Adel Mounir
+Email: adel.mounir@60sec.shop
+Phone: +201096888859
+WhatsApp: https://wa.me/201096888859
+Location: Egypt
+
+/* CLIENT */
+Client: Bright Ideas Trading & Contracting (شركة بريفت أديس للتنظيفات العامة والمقاولات)
+Hotline & WhatsApp: +974 31077466
+Location: Doha, State of Qatar
+
+/* SITE */
+Last update: 2026-08-11
+Standards: HTML5, CSS3, TypeScript, React 19, Next.js
+Components: Lucide React, Framer Motion, Tailwind CSS v4
+Software: Next.js

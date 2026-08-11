@@ -11,9 +11,13 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
     <>
       {/* Floating Call Button */}
       <a
-        href="tel:+97455056698"
+        href="tel:+97431077466"
         onClick={() => {
           if (typeof window !== "undefined" && (window as any).gtag) {
+            (window as any).gtag("event", "click_call", {
+              event_category: "Contact",
+              event_label: "Floating Call Button",
+            });
             (window as any).gtag("event", "conversion", {
               send_to: "AW-18248508524/dCdkCJ7G88scEOzIyP1D",
             });
@@ -22,7 +26,7 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
         className={`fixed bottom-24 z-[999] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-blue-400/40 transition-all duration-300 hover:scale-110 cursor-pointer ${
           isEn ? "left-8" : "right-8"
         }`}
-        aria-label="Call us directly"
+        aria-label="Call 31077466 directly"
       >
         {/* Sonar Ring Wave Effect */}
         <span className="absolute inset-0 rounded-full bg-blue-400/30 animate-ping -z-10" />
@@ -38,7 +42,7 @@ export default function WhatsAppFAB({ isEn }: WhatsAppFABProps) {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/97455056698"
+        href="https://wa.me/97431077466"
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => {

@@ -270,7 +270,7 @@ export default function Portfolio({ isEn, t }: PortfolioProps) {
 
                   {/* Request Service WhatsApp Button */}
                   <a
-                    href={`https://wa.me/97455056698?text=${encodeURIComponent(
+                    href={`https://wa.me/97431077466?text=${encodeURIComponent(
                       isEn 
                         ? `Hello, I'd like to request the service: ${project.titleEn}` 
                         : `مرحباً، أود طلب خدمة: ${project.titleAr}`

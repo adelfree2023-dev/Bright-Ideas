@@ -191,7 +191,7 @@ export default function Services({ isEn, t }: ServicesProps) {
 
               {/* CTA Link with hover Arrow animation */}
               <a
-                href="https://wa.me/97455056698"
+                href="https://wa.me/97431077466"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
