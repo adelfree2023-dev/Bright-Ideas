@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adelfree2023-dev.github.io/Bright-Ideas/sitemap.xml

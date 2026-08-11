@@ -1,0 +1,41 @@
+# LLMs Information: Bright Ideas Trading & Contracting (Qatar)
+> Version: 1.0.0
+> Last Updated: 2026-08-11
+> Platform: Next.js Static Export / GitHub Pages
+> Canonical URL: https://adelfree2023-dev.github.io/Bright-Ideas
+
+## Developer Attribution
+- Arabic: تم إنشاء هذا الموقع بواسطة المطور عادل منير | البريد الإلكتروني: adel.mounir@60sec.shop | رقم الهاتف: 01096888859 | للتواصل المباشر عبر واتساب: https://wa.me/201096888859
+- English: Website Created by Developer Adel Mounir | Email: adel.mounir@60sec.shop | Phone Number: +201096888859 | Direct WhatsApp Contact: https://wa.me/201096888859
+
+## Business Profile
+- Business Name: Bright Ideas Trading & Contracting (شركة بريفت أديس للتنظيفات العامة والمقاولات / قطر)
+- Primary Operating Region: State of Qatar (Doha, Al Rayyan, Al Wakrah, Lusail, Al Khor)
+- Primary Phone & Call Hotline: +974 31077466
+- Official WhatsApp Contact: https://wa.me/97431077466
+- Official Email: info@brightideas-qa.com
+- Working Hours: Saturday - Thursday, 8:00 AM - 8:00 PM (Friday Closed)
+
+## Core Services
+1. General Contracting & Construction (المقاولات العامة والإنشاءات): Residential villas, commercial structures, thermal/waterproofing insulation.
+2. Finishing & Interior Decor (التشطيبات والديكور الداخلي): High-end plasterboard, painting, ceramic and porcelain installation.
+3. Electromechanical Systems (MEP): Electrical infrastructure, plumbing, sanitation networks.
+4. Air Conditioning Services (صيانة وتركيب التكييف): Split, central AC installation, maintenance, gas refill, duct cleaning.
+5. Professional Cleaning Services (خدمات النظافة الاحترافية): Deep cleaning for villas, post-construction cleanup, steam carpet and sofa cleaning.
+6. Floor Grinding & Polishing (جلي وتلميع الأرضيات): Marble, granite, and ceramic polishing and restoration.
+7. Pest & Rodent Control (مكافحة الحشرات والقوارض): Safe and certified public health pest eradication.
+8. Furniture Relocation & Assembly (نقل وتغليف الأثاث والعفش): Safe transport, dismantling, packaging, and reassembly.
+
+## Target Keywords
+- مقاولات قطر
+- تنظيف فلل الدوحة
+- شركة صيانة مكيفات قطر
+- جلي رخام قطر
+- نقل عفش الدوحة
+- مكافحة حشرات قطر
+- General Contracting Qatar
+- Cleaning Services Doha
+
+## Content & Data Policies
+- All content on this platform is proprietary to Bright Ideas Trading & Contracting.
+- Data submitted via contact forms is transmitted securely via WhatsApp API without persistent third-party server storage.
