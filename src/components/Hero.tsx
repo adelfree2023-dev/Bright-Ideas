@@ -75,30 +75,10 @@ export default function Hero({ isEn, t }: HeroProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="text-slate-700 text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed font-medium"
+          className="text-slate-700 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed font-medium"
         >
           {t.hero.desc}
         </motion.p>
-
-        {/* Prominent Direct Phone & WhatsApp Highlight Bar */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="mb-8 p-3 px-6 rounded-2xl bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border border-yellow-500/40 shadow-sm flex flex-wrap items-center justify-center gap-4 text-slate-800"
-        >
-          <span className="text-sm md:text-base font-bold text-slate-700">
-            {isEn ? "Direct Hotline & WhatsApp:" : "الخط المباشر والواتساب:"}
-          </span>
-          <a
-            href="tel:+97431077466"
-            className="inline-flex items-center gap-2 text-yellow-700 hover:text-yellow-600 font-extrabold text-lg md:text-xl tracking-wider hover:underline"
-            dir="ltr"
-          >
-            <PhoneCall size={18} className="text-yellow-600 animate-bounce" />
-            <span>+974 31077466</span>
-          </a>
-        </motion.div>
 
         {/* CTA Buttons Cluster */}
         <motion.div
